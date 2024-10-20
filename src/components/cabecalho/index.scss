@@ -1,0 +1,47 @@
+.cabecalho {
+    background-color: #F4EDE4;
+    padding: 25px 75px;
+
+    .cabecalho-titulo {
+        color: #715C51;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+    }
+
+    .cabecalho-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .cabecalho-nav {
+        display: flex;
+        .cabecalho-nav-item-link{
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: #715C51;
+            text-decoration: none;
+            transition: color 0.3s;
+            &:hover {
+                color: #433D4A
+            }
+        }
+    }
+
+    .cabecalho-botao {
+        background-color: #CFC5B8;
+        color:#715C51;
+        padding: 5px 3px 5px 12px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 90px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        img {
+            width: 10px;
+            height: 10px;
+            margin-left: 5px;
+        }
+    }
+}

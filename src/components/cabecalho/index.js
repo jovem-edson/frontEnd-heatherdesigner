@@ -1,5 +1,4 @@
 import './index.scss'
-
 export default function Cabecalho(){
     return(
         <header className='cabecalho'>
@@ -33,6 +32,11 @@ export default function Cabecalho(){
                         </a>
                     </ul>
                 </nav>
+
+                    <button className='cabecalho-botao'>
+                        <b>Login</b>
+                        <img src='/assets/images/Forward.png' alt='seta'/>
+                    </button>
             </div>
             <div>
 
