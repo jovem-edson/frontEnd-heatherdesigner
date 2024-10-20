@@ -47,8 +47,8 @@
         font-family: 'Inter', sans-serif;
         font-weight: 600;
         img {
-            width: 10px;
-            height: 10px;
+            width: 15px;
+            height: 15px;
             margin-left: 5px;
         }
     }
@@ -59,3 +59,65 @@
         }
     
 }
+
+.segunda-secao {
+    background-color: #CFC5B8;
+    padding: 25px 150px;
+    
+    .segunda-secao-container{
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        text-align: center;
+        
+        .titulo {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            color: #433D4A;
+            font-size: 50px;
+        }
+
+        .informacao {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: #000;
+            font-size: 19px;
+        }
+
+        .formacoes {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            margin: 20px 0;
+
+            p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: #433D4A;
+            }
+        }
+
+        .formacoes-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            gap: 9px;
+          }
+
+          
+          .formacoes::before {
+            content: "";
+            position: absolute;
+            top: 75%; 
+            left: 0;
+            right: 0;
+            height: 8px;
+            background-color: #433D4A;
+            z-index: 0;
+          }
+
+          
+    }
+}    
