@@ -1,76 +1,151 @@
-.primeira-secao {
-    display: flex;
+.pagina-home {
     background-color: #F4EDE4;
-    padding: 25px 150px;
-    justify-content: space-between;
-    
-    .primeira-secao-container{
+
+
+
+    .primeira-secao {
         display: flex;
-        flex-direction: column;
-        gap: 25px;
-        padding: 50px 0;
-    }
+        padding: 100px 100px;
+        justify-content: space-between;
 
-    .subtitulo {
-        font-size: 30px;
-        font-family: 'Inter', sans-serif;
-        color: #7F7F7F;
-        font-weight: 500;
-    }
-
-    .sobre-mim {
-        font-size: 22px;
-        width: 460px;
-        font-family: 'Inter', sans-serif;
-        font-weight: 500;
-        color: #433D4A;
-    }
-
-    .sobre-mim-fotos {
-        width: 380px;
-        height: auto;
-    }
-
-    .primeira-secao-botoes {
-        display: flex;
-        gap: 30px;
-    }
-    .botao {
-        font-size: 22px;
-        background-color: #715C51;
-        color: #CFC5B8;
-        padding: 5px 0;
-        border: none;
-        border-radius: 20px;
-        cursor: pointer;
-        width: 175px;
-        font-family: 'Inter', sans-serif;
-        font-weight: 600;
-        img {
-            width: 15px;
-            height: 15px;
-            margin-left: 5px;
+        .primeira-secao-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            padding: 50px 0;
         }
-    }
+
+        .subtitulo {
+            font-size: 30px;
+            font-family: 'Inter', sans-serif;
+            color: #7F7F7F;
+            font-weight: 500;
+        }
+
+        .sobre-mim {
+            font-size: 22px;
+            width: 460px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: #433D4A;
+        }
+
+        .sobre-mim-fotos {
+            width: 380px;
+            height: auto;
+        }
+
+        .primeira-secao-botoes {
+            display: flex;
+            gap: 30px;
+        }
+
+        .botao {
+            font-size: 22px;
+            background-color: #715C51;
+            color: #CFC5B8;
+            padding: 5px 0;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 175px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+
+            img {
+                width: 15px;
+                height: 15px;
+                margin-left: 5px;
+            }
+        }
 
         .botao.secundario {
             background-color: #CFC5B8;
             color: #715C51;
         }
-    
-}
 
-.segunda-secao {
-    background-color: #CFC5B8;
-    padding: 25px 150px;
-    
-    .segunda-secao-container{
+    }
+
+    .segunda-secao {
+        background-color: #CFC5B8;
+        padding: 50px 100px;
+
+        .segunda-secao-container {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            text-align: center;
+
+            .titulo {
+                font-family: 'Inter', sans-serif;
+                font-weight: 900;
+                color: #433D4A;
+                font-size: 50px;
+            }
+
+            .informacao {
+                font-family: 'Inter', sans-serif;
+                font-weight: 500;
+                color: #000;
+                font-size: 19px;
+            }
+
+            .formacoes {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+                margin: 20px 0;
+
+                p {
+                    font-family: 'Inter', sans-serif;
+                    font-weight: 500;
+                    color: #433D4A;
+                }
+            }
+
+            .formacoes-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                gap: 9px;
+            }
+
+
+            .formacoes::before {
+                content: "";
+                position: absolute;
+                top: 75%;
+                left: 0;
+                right: 0;
+                height: 8px;
+                background-color: #433D4A;
+                z-index: 0;
+            }
+
+
+        }
+    }
+
+    .terceira-secao-experiencias {
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
-        gap: 60px;
-        text-align: center;
-        
-        .titulo {
+        padding: 50px 100px;
+        gap: 30px;
+
+        .titulo-sub {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            width: 1140px;;
+        }
+
+        h1 {
             font-family: 'Inter', sans-serif;
             font-weight: 900;
             color: #433D4A;
@@ -84,40 +159,35 @@
             font-size: 19px;
         }
 
-        .formacoes {
+        .carrossel {
             display: flex;
-            justify-content: space-between;
+            flex-direction: row;
+            justify-content: center;
             align-items: center;
-            position: relative;
-            margin: 20px 0;
-
-            p {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            color: #433D4A;
-            }
+            flex-wrap: wrap;
+            gap: 100px;
         }
 
-        .formacoes-item {
+        .carrossel .carrossel-cartao {
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative;
-            gap: 9px;
-          }
+            justify-content: center;
+            text-align: center;
+            width: 600px;
+        }
 
-          
-          .formacoes::before {
-            content: "";
-            position: absolute;
-            top: 75%; 
-            left: 0;
-            right: 0;
-            height: 8px;
-            background-color: #433D4A;
-            z-index: 0;
-          }
+        .carrossel .carrossel-cartao img {
+            width: 600px;
+            height: 480px;
+        }
 
-          
+        .carrossel .carrossel-cartao .carrossel-cartao-descricao {
+
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            color: #433D4A;
+            font-size: 20px;
+        }
     }
-}    
+}
