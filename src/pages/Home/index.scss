@@ -142,7 +142,8 @@
             align-items: center;
             flex-direction: column;
             text-align: center;
-            width: 1140px;;
+            width: 1140px;
+            ;
         }
 
         h1 {
@@ -175,6 +176,7 @@
             justify-content: center;
             text-align: center;
             width: 600px;
+            gap: 60px;
         }
 
         .carrossel .carrossel-cartao img {
@@ -185,9 +187,46 @@
         .carrossel .carrossel-cartao .carrossel-cartao-descricao {
 
             font-family: 'Inter', sans-serif;
-            font-weight: 900;
+            font-weight: 800;
             color: #433D4A;
             font-size: 20px;
+        }
+    }
+
+    .quarta-secao-projetos-notaveis {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 50px 100px;
+        gap: 30px;
+        background-color: #CFC5B8;
+
+        h1 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            color: #433D4A;
+            font-size: 50px;
+        }
+
+        .grid-projetos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            border: solid 1px black;
+            gap: 80px;
+
+        }
+
+        .grid-projetos .grid-projetos-cartao {
+            border: solid 1px green;
+        }
+
+        .grid-projetos .grid-projetos-cartao img {
+            width: 624px;
+            height: 404px;
+            border-radius: 45px;
         }
     }
 }

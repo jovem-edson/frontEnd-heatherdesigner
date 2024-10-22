@@ -132,6 +132,23 @@ export default function Home() {
 
             <section className='quarta-secao-projetos-notaveis'>
                 <h1> Projetos Notáveis </h1>
+                <div className='grid-projetos'>
+                    <div className='grid-projetos-cartao'>
+                        <img src='/assets/images/projetos-notaveis-1.png'/>
+                    </div>
+
+                    <div className='grid-projetos-cartao'>
+                        <img src='/assets/images/projetos-notaveis-2.png'/>
+                    </div>
+
+                    <div className='grid-projetos-cartao'>
+                        <img src='/assets/images/projetos-notaveis-3.png'/>
+                    </div>
+
+                    <div className='grid-projetos-cartao'>
+                        <img src='/assets/images/projetos-notaveis-4.png'/>
+                    </div>
+                </div>
             </section>
 
             <section className='quinta-secao-ferramentas'>
