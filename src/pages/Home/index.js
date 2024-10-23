@@ -1,6 +1,7 @@
 import './index.scss'
 
 import Cabecalho from '../../components/cabecalho'
+import Rodape from '../../components/rodape'
 
 export default function Home() {
     return (
@@ -134,19 +135,19 @@ export default function Home() {
                 <h1> Projetos Notáveis </h1>
                 <div className='grid-projetos'>
                     <div className='grid-projetos-cartao'>
-                        <img src='/assets/images/projetos-notaveis-1.png'/>
+                        <img src='/assets/images/projetos-notaveis-1.png' />
                     </div>
 
                     <div className='grid-projetos-cartao'>
-                        <img src='/assets/images/projetos-notaveis-2.png'/>
+                        <img src='/assets/images/projetos-notaveis-2.png' />
                     </div>
 
                     <div className='grid-projetos-cartao'>
-                        <img src='/assets/images/projetos-notaveis-3.png'/>
+                        <img src='/assets/images/projetos-notaveis-3.png' />
                     </div>
 
                     <div className='grid-projetos-cartao'>
-                        <img src='/assets/images/projetos-notaveis-4.png'/>
+                        <img src='/assets/images/projetos-notaveis-4.png' />
                     </div>
                 </div>
             </section>
@@ -167,7 +168,7 @@ export default function Home() {
             </section>
 
             <footer className='rodape'>
-
+                <Rodape />
             </footer>
         </div>
     )

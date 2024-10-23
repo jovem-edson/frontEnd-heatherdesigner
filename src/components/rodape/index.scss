@@ -1,0 +1,65 @@
+.rodape {
+    background-color: #3F3F46;
+    color: #E4DCCF;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+
+    .section-rodape {
+        display: flex;
+        justify-content: space-between;
+        margin-right: 200px;
+
+
+        .section-heather {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            h1 {
+                font-size: 26pt;
+            }
+
+            h5 {
+                font-weight: 200;
+            }
+
+            .section-img {
+                display: flex;
+                flex-direction: row;
+                gap: 15px;
+                margin-top: 10px;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+
+        .rodape-nav {
+            display: flex;
+            flex-direction: row;
+            gap: 100px;
+
+            ul {
+                list-style: none;
+
+                h3 {
+                    margin-bottom: 10px;
+                }
+
+                a {
+                    color: #E4DCCF;
+                    text-decoration: none;
+                    font-weight: 400;
+                    margin-bottom: 10px;
+                    display: block;
+                }
+
+                a:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
