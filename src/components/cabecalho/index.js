@@ -9,25 +9,25 @@ export default function Cabecalho(){
 
                 <nav className='cabecalho-nav'>
                     <ul className='cabecalho-nav-item'>
-                        <a href='#' className='cabecalho-nav-item-link'>
+                        <a href='../../pages/Home/index.js' className='cabecalho-nav-item-link'>
                             Home
                         </a>
                     </ul>
 
                     <ul className='cabecalho-nav-item'>
-                        <a href='#' className='cabecalho-nav-item-link'>
+                        <a href='../../pages/Home/index.js' className='cabecalho-nav-item-link'>
                             Portfólio
                         </a>
                     </ul>
 
                     <ul className='cabecalho-nav-item'>
-                        <a href='#' className='cabecalho-nav-item-link'>
+                        <a href='../../pages/Home/index.js' className='cabecalho-nav-item-link'>
                             Serviços
                         </a>
                     </ul>
 
                     <ul className='cabecalho-nav-item'>
-                        <a href='#' className='cabecalho-nav-item-link'>
+                        <a href='../../pages/Home/index.js' className='cabecalho-nav-item-link'>
                             Sobre
                         </a>
                     </ul>

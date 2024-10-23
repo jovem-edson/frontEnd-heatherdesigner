@@ -9,15 +9,15 @@ export default function Rodape() {
                         Heather Designer
                     </h1>
                     <div className='section-img'>
-                        <a className='fb' href='#'>
+                        <a className='fb' href='../../pages/Home/index.js' role='button' tabIndex='0'>
                             <img src='/assets/images/Rodape/fb.png' alt='Facebook' />
                         </a>
 
-                        <a className='instagram' href='#'>
+                        <a className='instagram' href='../../pages/Home/index.js' role='button' tabIndex='0'>
                             <img src='/assets/images/Rodape/instagram.png' alt='Instagram' />
                         </a>
 
-                        <a className='linkedin' href='#'>
+                        <a className='linkedin' href='../../pages/Home/index.js' role='button' tabIndex='0'>
                             <img src='/assets/images/Rodape/LinkedIn.png' alt='LinkedIn' />
                         </a>
                     </div>
@@ -28,21 +28,21 @@ export default function Rodape() {
                 <nav className='rodape-nav'>
                     <ul>
                         <h3>Serviços</h3>
-                        <li><a href='#'>Cadastrar</a></li>
-                        <li><a href='#'>Logar</a></li>
+                        <li><a href='../../pages/Home/index.js' role='button' tabIndex='0'>Cadastrar</a></li>
+                        <li><a href='../../pages/Home/index.js' role='button' tabIndex='0'>Logar</a></li>
                     </ul>
 
                     <ul>
                         <h3>Suporte</h3>
-                        <li><a href='#'>Sobre mim</a></li>
-                        <li><a href='#'>Ajuda</a></li>
+                        <li><a href='../../pages/Home/index.js' role='button' tabIndex='0'>Sobre mim</a></li>
+                        <li><a href='../../pages/Home/index.js' role='button' tabIndex='0'>Ajuda</a></li>
                     </ul>
 
                     <ul>
                         <h3>Idioma</h3>
                         <li>
                             <img src='/assets/images/Rodape/idioma.png' alt='Idioma' />
-                            <a href='#'>Português - Brasil</a>
+                            <a href='.' role='button' tabIndex='0'>Português - Brasil</a>
                         </li>
                     </ul>
                 </nav>

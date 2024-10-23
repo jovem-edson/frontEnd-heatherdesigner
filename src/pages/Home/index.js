@@ -57,7 +57,7 @@ export default function Home() {
                                 <b>Senac São Paulo</b>
                             </p>
 
-                            <img src='/assets/images/circulo.svg' />
+                            <img src='/assets/images/circulo.svg' alt='circulo' />
 
                             <p className='formacoes-item-texto'>
                                 <b>2016</b>
@@ -66,7 +66,7 @@ export default function Home() {
                         </div>
 
                         <div className='formacoes-item'>
-                            <img src='/assets/images/unesparo.svg' alt='senac' />
+                            <img src='/assets/images/unesparo.svg' alt='unespar' />
 
                             <p className='formacoes-item-texto'>
                                 Pós Graduação em Artes Visuais
@@ -74,7 +74,7 @@ export default function Home() {
                                 <b>Universidade Estadual do Paraná</b>
                             </p>
 
-                            <img src='/assets/images/circulo.svg' />
+                            <img src='/assets/images/circulo.svg' alt='circulo' />
 
                             <p className='formacoes-item-texto'>
                                 <b>2020</b>
@@ -83,7 +83,7 @@ export default function Home() {
                         </div>
 
                         <div className='formacoes-item'>
-                            <img src='/assets/images/unespo.svg' alt='senac' />
+                            <img src='/assets/images/unespo.svg' alt='unesp' />
 
                             <p className='formacoes-item-texto'>
                                 Doutorado em Artes
@@ -91,7 +91,7 @@ export default function Home() {
                                 <b>Universidade Estadual Paulista</b>
                             </p>
 
-                            <img src='/assets/images/circulo.svg' />
+                            <img src='/assets/images/circulo.svg' alt='circulo'/>
 
                             <p className='formacoes-item-texto'>
                                 <b>2024</b>
@@ -113,17 +113,17 @@ export default function Home() {
 
                 <div className='carrossel'>
                     <div className='carrossel-cartao'>
-                        <img className='carrossel-cartao-imagem' src='/assets/images/carrossel-experiencias-1.png' />
+                        <img className='carrossel-cartao-imagem' src='/assets/images/carrossel-experiencias-1.png' alt='experiencia'/>
                         <p className='carrossel-cartao-descricao'> No Equador, colaborei em um projeto de revitalização urbana, onde explorei a fusão de tradições locais com design contemporâneo, criando espaços que refletiam a identidade cultural da comunidade. </p>
                     </div>
 
                     <div className='carrossel-cartao'>
-                        <img className='carrosel-cartao-imagem' src='/assets/images/carrossel-experiencias-2.png' />
+                        <img className='carrosel-cartao-imagem' src='/assets/images/carrossel-experiencias-2.png' alt='experiencia' />
                         <p className='carrossel-cartao-descricao'> Em China, trabalhei em um ambiente rústico, em aldeias fora da cidade, onde pude desenvolver projetos que respeitavam e integravam a cultura local. A imersão em comunidades tradicionais me ensinou a valorizar o design sustentável e a harmonização com a natureza. </p>
                     </div>
 
                     <div className='carrossel-cartao'>
-                        <img className='carrosel-cartao-imagem' src='/assets/images/carrossel-experiencias-3.png' />
+                        <img className='carrosel-cartao-imagem' src='/assets/images/carrossel-experiencias-3.png' alt='experiencia'/>
                         <p className='carrossel-cartao-descricao'> Na Itália, mergulhei na rica herança do design, contribuindo para uma marca de moda renomada. A experiência de trabalhar ao lado de mestres artesãos me inspirou a valorizar a estética e a funcionalidade, elevando cada projeto a uma forma de arte. </p>
                     </div>
 
@@ -137,19 +137,19 @@ export default function Home() {
                 <h1> Projetos Notáveis </h1>
                 <div className='grid-projetos'>
                     <div className='grid-projetos-cartao'>
-                        <img src='/assets/images/projetos-notaveis-1.png' />
+                        <img src='/assets/images/projetos-notaveis-1.png' alt='projeto' />
                     </div>
 
                     <div className='grid-projetos-cartao'>
-                        <img src='/assets/images/projetos-notaveis-2.png' />
+                        <img src='/assets/images/projetos-notaveis-2.png' alt='projeto' />
                     </div>
 
                     <div className='grid-projetos-cartao'>
-                        <img src='/assets/images/projetos-notaveis-3.png' />
+                        <img src='/assets/images/projetos-notaveis-3.png' alt='projeto' />
                     </div>
 
                     <div className='grid-projetos-cartao'>
-                        <img src='/assets/images/projetos-notaveis-4.png' />
+                        <img src='/assets/images/projetos-notaveis-4.png' alt='projeto' />
                     </div>
                 </div>
                 <p> Ver mais...</p>
@@ -164,7 +164,7 @@ export default function Home() {
                 <div className='baloes-depoimentos'>
                     <div class="talk-bubble tri-right round btm-left-in">
                         <div class="talktext">
-                            <img className='baloes-depoimentos-balao-foto' src='assets/images/depoimentos-1.png' />
+                            <img className='baloes-depoimentos-balao-foto' src='assets/images/depoimentos-1.png' alt='depoimento' />
                             <hr width="1" size="168" />
                             <div className='baloes-depoimentos-balao-texto'>
                                 <h2 className='baloes-depoimentos-balao-texto-nome'> Jorge Vercillo </h2>
@@ -180,7 +180,7 @@ export default function Home() {
 
                     <div class="talk-bubble tri-right round btm-left-in">
                         <div class="talktext">
-                            <img className='baloes-depoimentos-balao-foto' src='assets/images/depoimentos-2.png' />
+                            <img className='baloes-depoimentos-balao-foto' src='assets/images/depoimentos-2.png' alt='depoimento' />
                             <hr width="1" size="109" />
                             <div className='baloes-depoimentos-balao-texto'>
                                 <h2 className='baloes-depoimentos-balao-texto-nome'> Wando Lima </h2>
@@ -193,7 +193,7 @@ export default function Home() {
 
                     <div class="talk-bubble tri-right round btm-left-in">
                         <div class="talktext">
-                            <img className='baloes-depoimentos-balao-foto' src='assets/images/depoimentos-3.png' />
+                            <img className='baloes-depoimentos-balao-foto' src='assets/images/depoimentos-3.png' alt='depoimento' />
                             <hr width="1" size="109" />
                             <div className='baloes-depoimentos-balao-texto'>
                                 <h2 className='baloes-depoimentos-balao-texto-nome'> Djavan Souza </h2>
@@ -216,7 +216,7 @@ export default function Home() {
                 </div>
                 <div className='grid-ferramentas'>
                     <div className='grid-ferramentas-ferramenta'>
-                        <img src='assets/images/ferramentas-illustrator.png' alt='Adobe Illustrator' />
+                        <img src='assets/images/ferramentas-illustrator.png' alt='Adobe Illustrator'  />
                         <h2> Adobe Illustrator </h2>
                         <p> Design Gráfico </p>
                     </div>
@@ -258,7 +258,7 @@ export default function Home() {
                     <h1>
                         Em que posso ajudar?
                     </h1>
-                    <img src='assets/images/Contato/Contato.png' ></img>
+                    <img src='assets/images/Contato/Contato.png' alt='contato'/>
                     <p>Sinta-se a vontade para tirar dúvidas, discutir projetos e dar um feedback geral.</p>
                 </div>
                 <div className='secao-contato-2'>
