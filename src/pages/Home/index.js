@@ -152,13 +152,102 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className='quinta-secao-ferramentas'>
-                <h1> Ferramentas </h1>
 
+            <section className='quinta-secao-depoimentos'>
+                <div className='titulo-subtitulo'>
+                    <h1> Depoimentos </h1>
+                    <p className='subtitulo'>Feedback de clientes com quem trabalhei</p>
+                </div>
+                <div className='baloes-depoimentos'>
+                    <div class="talk-bubble tri-right round btm-left-in">
+                        <div class="talktext">
+                            <img className='baloes-depoimentos-balao-foto' src='assets/images/depoimentos-1.png' />
+                            <hr width="1" size="168" />
+                            <div className='baloes-depoimentos-balao-texto'>
+                                <h2 className='baloes-depoimentos-balao-texto-nome'> Jorge Vercillo </h2>
+                                <p className='baloes-depoimentos-balao-texto-depoimento'>
+                                    “Trabalhar com a Heather foi uma experiência incrível! Sua criatividade e
+                                    atenção aos detalhes transformaram nossas ideias em realidade de forma
+                                    impressionante. Além disso, sua comunicação clara e profissional tornou
+                                    todo o processo muito fluido e agradável.”
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="talk-bubble tri-right round btm-left-in">
+                        <div class="talktext">
+                            <img className='baloes-depoimentos-balao-foto' src='assets/images/depoimentos-2.png' />
+                            <hr width="1" size="109" />
+                            <div className='baloes-depoimentos-balao-texto'>
+                                <h2 className='baloes-depoimentos-balao-texto-nome'> Wando Lima </h2>
+                                <p className='baloes-depoimentos-balao-texto-depoimento'>
+                                    “A colaboração com a Heather foi maravilhosa! Sua visão criativa e dedicação tornaram o projeto muito mais especial.”
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="talk-bubble tri-right round btm-left-in">
+                        <div class="talktext">
+                            <img className='baloes-depoimentos-balao-foto' src='assets/images/depoimentos-3.png' />
+                            <hr width="1" size="109" />
+                            <div className='baloes-depoimentos-balao-texto'>
+                                <h2 className='baloes-depoimentos-balao-texto-nome'> Djavan Souza </h2>
+                                <p className='baloes-depoimentos-balao-texto-depoimento'>
+                                    “Trabalhar com a Heather foi um prazer! Ela trouxe uma energia contagiante e soluções inovadoras que superaram nossas expectativas.”
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
             </section>
 
-            <section className='sexta-secao-depoimentos'>
-                <h1> Depoimentos </h1>
+            <section className='sexta-secao-ferramentas'>
+                <div className='titulo-subtitulo'>
+                    <h1> Ferramentas </h1>
+                    <p className='subtitulo'> Ferramentas que possuo domínio </p>
+        </div>
+                    <div className='grid-ferramentas'>
+                        <div className='grid-ferramentas-ferramenta'>
+                            <img src='assets/images/ferramentas-illustrator.png' alt='Adobe Illustrator' />
+                            <h2> Adobe Illustrator </h2>
+                            <p> Design Gráfico </p>
+                        </div>
+
+                        <div className='grid-ferramentas-ferramenta'>
+                            <img src='assets/images/ferramentas-aero.png' alt='Adobe Aero' />
+                            <h2> Adobe Aero </h2>
+                            <p> Simulações em Realidade Aumentada </p>
+                        </div>
+
+                        <div className='grid-ferramentas-ferramenta'>
+                            <img src='assets/images/ferramentas-photoshop.png' alt='Adobe Photoshop' />
+                            <h2> Adobe Photoshop </h2>
+                            <p> Edição de Imagens </p>
+                        </div>
+
+                        <div className='grid-ferramentas-ferramenta'>
+                            <img src='assets/images/ferramentas-blender.png' alt='Blender' />
+                            <h2> Blender </h2>
+                            <p> Modelagem 3D </p>
+                        </div>
+
+                        <div className='grid-ferramentas-ferramenta'>
+                            <img src='assets/images/ferramentas-canva.png' alt='Canva' />
+                            <h2> Canva </h2>
+                            <p> Design Gráfico </p>
+                        </div>
+
+                        <div className='grid-ferramentas-ferramenta'>
+                            <img src='assets/images/ferramentas-figma.png' alt='Figma' />
+                            <h2> Figma </h2>
+                            <p> Design de Protótipos </p>
+                        </div>
+                    </div>
             </section>
 
             <section className='setima-secao-contato'>

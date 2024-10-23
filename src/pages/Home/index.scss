@@ -5,7 +5,7 @@
 
     .primeira-secao {
         display: flex;
-        padding: 100px 100px;
+        padding: 50px 100px;
         justify-content: space-between;
 
         .primeira-secao-container {
@@ -166,7 +166,7 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 100px;
+            gap: 60px;
         }
 
         .carrossel .carrossel-cartao {
@@ -175,21 +175,20 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            width: 600px;
-            gap: 60px;
+            width: 500px;
+            gap: 20px;
         }
 
         .carrossel .carrossel-cartao img {
-            width: 600px;
-            height: 480px;
+            width: 500px;
+            height: 400px;
         }
 
         .carrossel .carrossel-cartao .carrossel-cartao-descricao {
-
             font-family: 'Inter', sans-serif;
-            font-weight: 800;
+            font-weight: 500;
             color: #433D4A;
-            font-size: 20px;
+            font-size: 18px;
         }
     }
 
@@ -214,19 +213,191 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            border: solid 1px black;
             gap: 80px;
 
         }
 
-        .grid-projetos .grid-projetos-cartao {
-            border: solid 1px green;
-        }
+        
 
         .grid-projetos .grid-projetos-cartao img {
-            width: 624px;
-            height: 404px;
+            width: 550px;
+            height: 356px;
             border-radius: 45px;
+        }
+    }
+
+    .quinta-secao-depoimentos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 50px 100px 90px 50px;
+        font-family: 'Inter', sans-serif;
+        color: #433D4A;
+        gap: 60px;
+
+
+        .titulo-subtitulo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        h1 {
+            font-weight: 900;
+            font-size: 50px;
+        }
+
+        .subtitulo {
+            font-weight: 500;
+            color: #000;
+            font-size: 19px;
+        }
+
+        hr {
+            border-color: #DEB35C;
+        }
+
+        .talk-bubble {
+            display: inline-block;
+            position: relative;
+            width: 1150px;
+            padding-top: 30px;
+            background-color: #D4D4D8;
+            border-radius: 45px;
+            padding: 0px 50px 0px 50px;
+        }
+
+        .talktext {
+            padding: 1em;
+            text-align: left;
+            line-height: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .talktext p {
+            /* remove webkit p margins */
+            -webkit-margin-before: 0em;
+            -webkit-margin-after: 0em;
+        }
+
+        /*Right triangle, placed bottom left side slightly in*/
+        .tri-right.btm-left-in:after {
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: 60px;
+            right: auto;
+            top: auto;
+            bottom: -40px;
+            z-index: 1;
+            border: 30px solid;
+            border-color:  #D4D4D8 transparent transparent #D4D4D8;
+        }
+
+        .baloes-depoimentos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 60px;
+
+            .baloes-depoimentos-balao {
+                display: flex;
+            }
+
+            .baloes-depoimentos-balao-foto {
+                width: 147px;
+                height: 147px;
+                margin-right: 45px;
+                z-index: 2;
+            }
+
+            .baloes-depoimentos-balao-texto {
+
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                justify-content: center;
+                margin-left: 15px;
+            }
+
+            .baloes-depoimentos-balao-texto-nome {
+                font-size: 24px;
+            }
+
+            .baloes-depoimentos-balao-texto-depoimento {
+                font-size: 20px;
+                font-style: italic;
+            }
+        }
+
+    }
+
+    .sexta-secao-ferramentas {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 100px;
+        gap: 80px;
+        background-color: #CFC5B8;
+
+        font-family: 'Inter', sans-serif;
+        color: #433D4A;
+
+        .titulo-subtitulo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        h1 {
+            font-weight: 900;
+            font-size: 50px;
+        }
+
+        .subtitulo {
+            font-weight: 500;
+            color: #000;
+            font-size: 19px;
+        }
+
+        .grid-ferramentas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 1128px;
+            gap: 90px;
+        }
+
+        .grid-ferramentas-ferramenta {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .grid-ferramentas-ferramenta img {
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        .grid-ferramentas-ferramenta h2 {
+            font-size: 32px;
+        }
+
+        .grid-ferramentas-ferramenta p {
+            font-size: 24px;
         }
     }
 }
