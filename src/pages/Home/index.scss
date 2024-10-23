@@ -43,7 +43,7 @@
         .botao {
             font-size: 22px;
             background-color: #715C51;
-            color: #CFC5B8;
+            color: hwb(34 72% 19%);
             padding: 5px 0;
             border: none;
             border-radius: 20px;
@@ -217,7 +217,7 @@
 
         }
 
-        
+
 
         .grid-projetos .grid-projetos-cartao img {
             width: 550px;
@@ -297,7 +297,7 @@
             bottom: -40px;
             z-index: 1;
             border: 30px solid;
-            border-color:  #D4D4D8 transparent transparent #D4D4D8;
+            border-color: #D4D4D8 transparent transparent #D4D4D8;
         }
 
         .baloes-depoimentos {
@@ -400,4 +400,115 @@
             font-size: 24px;
         }
     }
+
+    .setima-secao-contato {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f7ead7;
+        padding: 50px;
+        border-radius: 15px;
+
+        .secao-contato-1 {
+            width: 45%;
+            text-align: center;
+
+            h1 {
+                font-size: 2rem;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            img {
+                width: 80%;
+                height: auto;
+                border-radius: 50%;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-size: 1.1rem;
+                color: #333;
+            }
+        }
+
+        .secao-contato-2 {
+            width: 45%;
+            background-color: #e9dbc8;
+            padding: 40px;
+            border: 1px solid #4a4a4a;
+            border-radius: 10px;
+
+            h1 {
+                text-align: center;
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+                color: #4a4a4a;
+                font-size: 50px;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    font-size: 1rem;
+                    margin-bottom: 10px;
+                    color: #333;
+                    display: flex;
+                    flex-direction: column;
+
+                    input,
+                    select,
+                    textarea {
+                        margin-top: 5px;
+                        padding: 10px;
+                        font-size: 1rem;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        background-color: #fff;
+                        width: 100%;
+                    }
+
+                    textarea {
+                        height: 120px;
+                        resize: none;
+                    }
+                }
+
+                button {
+                    width: 120px;
+                    margin-top: 20px;
+                    background-color: #DEB35C;
+                    color: white;
+                    padding: 12px;
+                    font-size: 1rem;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+
+                    &:hover {
+                        background-color: #b5894b;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+            //se adapta a um desing responsivo no caso do fomrulario
+            flex-direction: column;
+
+            .secao-contato-1,
+            .secao-contato-2 {
+                width: 100%;
+            }
+
+            .secao-contato-1 {
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+
 }

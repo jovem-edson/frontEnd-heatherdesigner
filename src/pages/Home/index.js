@@ -210,50 +210,83 @@ export default function Home() {
                 <div className='titulo-subtitulo'>
                     <h1> Ferramentas </h1>
                     <p className='subtitulo'> Ferramentas que possuo domínio </p>
-        </div>
-                    <div className='grid-ferramentas'>
-                        <div className='grid-ferramentas-ferramenta'>
-                            <img src='assets/images/ferramentas-illustrator.png' alt='Adobe Illustrator' />
-                            <h2> Adobe Illustrator </h2>
-                            <p> Design Gráfico </p>
-                        </div>
-
-                        <div className='grid-ferramentas-ferramenta'>
-                            <img src='assets/images/ferramentas-aero.png' alt='Adobe Aero' />
-                            <h2> Adobe Aero </h2>
-                            <p> Simulações em Realidade Aumentada </p>
-                        </div>
-
-                        <div className='grid-ferramentas-ferramenta'>
-                            <img src='assets/images/ferramentas-photoshop.png' alt='Adobe Photoshop' />
-                            <h2> Adobe Photoshop </h2>
-                            <p> Edição de Imagens </p>
-                        </div>
-
-                        <div className='grid-ferramentas-ferramenta'>
-                            <img src='assets/images/ferramentas-blender.png' alt='Blender' />
-                            <h2> Blender </h2>
-                            <p> Modelagem 3D </p>
-                        </div>
-
-                        <div className='grid-ferramentas-ferramenta'>
-                            <img src='assets/images/ferramentas-canva.png' alt='Canva' />
-                            <h2> Canva </h2>
-                            <p> Design Gráfico </p>
-                        </div>
-
-                        <div className='grid-ferramentas-ferramenta'>
-                            <img src='assets/images/ferramentas-figma.png' alt='Figma' />
-                            <h2> Figma </h2>
-                            <p> Design de Protótipos </p>
-                        </div>
+                </div>
+                <div className='grid-ferramentas'>
+                    <div className='grid-ferramentas-ferramenta'>
+                        <img src='assets/images/ferramentas-illustrator.png' alt='Adobe Illustrator' />
+                        <h2> Adobe Illustrator </h2>
+                        <p> Design Gráfico </p>
                     </div>
+
+                    <div className='grid-ferramentas-ferramenta'>
+                        <img src='assets/images/ferramentas-aero.png' alt='Adobe Aero' />
+                        <h2> Adobe Aero </h2>
+                        <p> Simulações em Realidade Aumentada </p>
+                    </div>
+
+                    <div className='grid-ferramentas-ferramenta'>
+                        <img src='assets/images/ferramentas-photoshop.png' alt='Adobe Photoshop' />
+                        <h2> Adobe Photoshop </h2>
+                        <p> Edição de Imagens </p>
+                    </div>
+
+                    <div className='grid-ferramentas-ferramenta'>
+                        <img src='assets/images/ferramentas-blender.png' alt='Blender' />
+                        <h2> Blender </h2>
+                        <p> Modelagem 3D </p>
+                    </div>
+
+                    <div className='grid-ferramentas-ferramenta'>
+                        <img src='assets/images/ferramentas-canva.png' alt='Canva' />
+                        <h2> Canva </h2>
+                        <p> Design Gráfico </p>
+                    </div>
+
+                    <div className='grid-ferramentas-ferramenta'>
+                        <img src='assets/images/ferramentas-figma.png' alt='Figma' />
+                        <h2> Figma </h2>
+                        <p> Design de Protótipos </p>
+                    </div>
+                </div>
             </section>
 
             <section className='setima-secao-contato'>
-                <h1>
-                    Contato
-                </h1>
+                <div className='secao-contato-1'>
+                    <h1>
+                        Em que posso ajudar?
+                    </h1>
+                    <img src='assets/images/Contato/Contato.png' ></img>
+                    <p>Sinta-se a vontade para tirar dúvidas, discutir projetos e dar um feedback geral.</p>
+                </div>
+                <div className='secao-contato-2'>
+                    <h1>Contato</h1>
+                    <form className='formulario'>
+                        <label>Nome:
+                            <input></input>
+                        </label>
+                        <label>Sobrenome:
+                            <input></input>
+                        </label>
+                        <label>Endereço de email:
+                            <input></input>
+                        </label>
+                        <label>Assunto:
+                            <select>
+                                <option>Photoshop</option>
+                                <option>Design Gráfico</option>
+                                <option>UX/UI Design</option>
+                                <option>Design de Aplicativos</option>
+                                <option>Design de Produto</option>
+                            </select>
+                        </label>
+                        <label>Mensagem:
+                            <textarea></textarea>
+                        </label>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+
+
             </section>
 
             <footer className='rodape'>
