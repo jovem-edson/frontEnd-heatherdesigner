@@ -38,17 +38,7 @@ export default function Cabecalho(){
                         <img src='/assets/images/Forward.png' alt='seta'/>
                     </button>
             </div>
-            <div>
-
-            </div>
-
-            <div>
-
-            </div>
-
-            <div>
-
-            </div>
+   
         </header>
     )
 }

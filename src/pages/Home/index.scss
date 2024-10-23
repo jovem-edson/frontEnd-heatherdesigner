@@ -1,12 +1,19 @@
 .pagina-home {
     background-color: #F4EDE4;
+    font-family: 'Inter', sans-serif;
+    
 
-
+    h1 {
+        font-weight: 900;
+        color: #433D4A;
+        font-size: 50px;
+    }
 
     .primeira-secao {
         display: flex;
-        padding: 50px 100px;
-        justify-content: space-between;
+        padding: 50px 250px;
+        justify-content: center;
+        gap: 365px;
 
         .primeira-secao-container {
             display: flex;
@@ -31,7 +38,7 @@
         }
 
         .sobre-mim-fotos {
-            width: 380px;
+            width: 500px;
             height: auto;
         }
 
@@ -68,7 +75,10 @@
 
     .segunda-secao {
         background-color: #CFC5B8;
-        padding: 50px 100px;
+        padding: 50px 250px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
 
         .segunda-secao-container {
             display: flex;
@@ -76,12 +86,7 @@
             gap: 60px;
             text-align: center;
 
-            .titulo {
-                font-family: 'Inter', sans-serif;
-                font-weight: 900;
-                color: #433D4A;
-                font-size: 50px;
-            }
+            
 
             .informacao {
                 font-family: 'Inter', sans-serif;
@@ -92,10 +97,12 @@
 
             .formacoes {
                 display: flex;
-                justify-content: space-between;
+                justify-content: center;
                 align-items: center;
                 position: relative;
                 margin: 20px 0;
+                gap: 365px;
+
 
                 p {
                     font-family: 'Inter', sans-serif;
@@ -133,7 +140,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        padding: 50px 100px;
+        padding: 50px 250px;
         gap: 30px;
 
         .titulo-sub {
@@ -197,7 +204,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        padding: 50px 100px;
+        padding: 50px 250px;
         gap: 30px;
         background-color: #CFC5B8;
 
@@ -217,11 +224,9 @@
 
         }
 
-
-
         .grid-projetos .grid-projetos-cartao img {
-            width: 550px;
-            height: 356px;
+            width: 500px;
+            height: 324px;
             border-radius: 45px;
         }
     }

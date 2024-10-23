@@ -7,6 +7,8 @@ export default function Home() {
     return (
         <div className='pagina-home'>
             <Cabecalho />
+
+
             <section className='primeira-secao'>
                 <div className='primeira-secao-container'>
                     <h2 className='subtitulo'>

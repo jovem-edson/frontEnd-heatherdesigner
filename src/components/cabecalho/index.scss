@@ -1,6 +1,6 @@
 .cabecalho {
     background-color: #F4EDE4;
-    padding: 25px 150px;
+    padding: 25px 250px;
 
     .cabecalho-titulo {
         color: #715C51;
@@ -35,7 +35,8 @@
         border: none;
         border-radius: 10px;
         cursor: pointer;
-        width: 90px;
+        width: 100px;
+        height: 35px;
         font-family: 'Inter', sans-serif;
         font-weight: 600;
         img {
