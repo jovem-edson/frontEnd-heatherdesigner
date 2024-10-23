@@ -92,7 +92,7 @@
                 font-family: 'Inter', sans-serif;
                 font-weight: 500;
                 color: #000;
-                font-size: 19px;
+                font-size: 16px;
             }
 
             .formacoes {
@@ -101,7 +101,7 @@
                 align-items: center;
                 position: relative;
                 margin: 20px 0;
-                gap: 365px;
+                gap: 80px;
 
 
                 p {
@@ -116,7 +116,7 @@
                 flex-direction: column;
                 align-items: center;
                 position: relative;
-                gap: 9px;
+                gap: 10px;
             }
 
 
@@ -150,7 +150,7 @@
             flex-direction: column;
             text-align: center;
             width: 1140px;
-            ;
+            
         }
 
         h1 {
@@ -164,38 +164,34 @@
             font-family: 'Inter', sans-serif;
             font-weight: 500;
             color: #000;
-            font-size: 19px;
+            font-size: 16px;
         }
 
         .carrossel {
             display: flex;
             flex-direction: row;
-            justify-content: center;
-            align-items: center;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 60px;
         }
 
         .carrossel .carrossel-cartao {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
             text-align: center;
-            width: 500px;
+            width: 400px;
             gap: 20px;
         }
 
         .carrossel .carrossel-cartao img {
-            width: 500px;
-            height: 400px;
+            width: 400px;
         }
 
         .carrossel .carrossel-cartao .carrossel-cartao-descricao {
             font-family: 'Inter', sans-serif;
             font-weight: 500;
             color: #433D4A;
-            font-size: 18px;
+            font-size: 14px;
         }
     }
 
@@ -220,13 +216,14 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 80px;
+            gap: 50px;
 
         }
 
+
         .grid-projetos .grid-projetos-cartao img {
-            width: 500px;
-            height: 324px;
+            width: 400px;
+            height: 259px;
             border-radius: 45px;
         }
     }
@@ -258,7 +255,7 @@
         .subtitulo {
             font-weight: 500;
             color: #000;
-            font-size: 19px;
+            font-size: 16px;
         }
 
         hr {
@@ -349,7 +346,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        padding: 100px;
+        padding: 50px 250px;
         gap: 80px;
         background-color: #CFC5B8;
 
@@ -372,15 +369,15 @@
         .subtitulo {
             font-weight: 500;
             color: #000;
-            font-size: 19px;
+            font-size: 16px;
         }
 
         .grid-ferramentas {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            width: 1128px;
-            gap: 90px;
+            justify-content: space-between;
+            width: 1000px;
+            gap: 50px;
         }
 
         .grid-ferramentas-ferramenta {
@@ -393,16 +390,16 @@
         }
 
         .grid-ferramentas-ferramenta img {
-            width: 200px;
+            width: 150px;
             margin-bottom: 10px;
         }
 
         .grid-ferramentas-ferramenta h2 {
-            font-size: 32px;
+            font-size: 24px;
         }
 
         .grid-ferramentas-ferramenta p {
-            font-size: 24px;
+            font-size: 20px;
         }
     }
 

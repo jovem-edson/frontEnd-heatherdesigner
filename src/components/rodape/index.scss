@@ -17,6 +17,9 @@
 
             h1 {
                 font-size: 26pt;
+                font-weight: 500;
+                color: #E4DCCF;
+
             }
 
             h5 {
@@ -39,7 +42,7 @@
         .rodape-nav {
             display: flex;
             flex-direction: row;
-            gap: 100px;
+            gap: 80px;
 
             ul {
                 list-style: none;
@@ -52,12 +55,17 @@
                     color: #E4DCCF;
                     text-decoration: none;
                     font-weight: 400;
-                    margin-bottom: 10px;
                     display: block;
                 }
 
                 a:hover {
                     text-decoration: underline;
+                }
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
                 }
             }
         }

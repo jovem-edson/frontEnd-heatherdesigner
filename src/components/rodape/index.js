@@ -8,9 +8,6 @@ export default function Rodape() {
                     <h1>
                         Heather Designer
                     </h1>
-
-                    <h5>© 2024 Heather Designer. Todos os direitos reservados.</h5>
-
                     <div className='section-img'>
                         <a className='fb' href='#'>
                             <img src='/assets/images/Rodape/fb.png' alt='Facebook' />
@@ -24,6 +21,8 @@ export default function Rodape() {
                             <img src='/assets/images/Rodape/LinkedIn.png' alt='LinkedIn' />
                         </a>
                     </div>
+                    <h5>© 2024 Heather Designer. Todos os direitos reservados.</h5>
+
                 </div>
 
                 <nav className='rodape-nav'>

@@ -152,6 +152,7 @@ export default function Home() {
                         <img src='/assets/images/projetos-notaveis-4.png' />
                     </div>
                 </div>
+                <p> Ver mais...</p>
             </section>
 
 
@@ -266,9 +267,7 @@ export default function Home() {
                         <label>Nome:
                             <input></input>
                         </label>
-                        <label>Sobrenome:
-                            <input></input>
-                        </label>
+
                         <label>Endereço de email:
                             <input></input>
                         </label>
