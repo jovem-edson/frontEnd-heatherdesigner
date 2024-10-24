@@ -405,39 +405,42 @@
 
     .setima-secao-contato {
         display: flex;
-        justify-content: space-between;
+        gap: 150px;
         align-items: center;
-        background-color: #f7ead7;
-        padding: 50px;
+        background-color: #F4EDE4;
         border-radius: 15px;
         font-family: 'Inter', sans-serif;
 
         .secao-contato-1 {
-            width: 45%;
+            display: flex;
+            justify-content: end;
+            flex-direction: column;
+            height: 852px;
+            width: 600px;
+            background-image: url('../../../public/assets/images/designer.png');
             text-align: center;
+            background-size: cover;
 
             h1 {
-                font-size: 2rem;
-                font-weight: bold;
+                font-family: 'Inter', sans-serif;
+                color: #E4DCCF;
+                font-weight: 700;
+                font-size: 45px;
                 margin-bottom: 20px;
                 
             }
 
-            img {
-                width: 80%;
-                height: auto;
-                border-radius: 50%;
-                margin-bottom: 20px;
-            }
-
             p {
-                font-size: 1.1rem;
-                color: #333;
+                font-family: 'Inter', sans-serif;
+                color: #E4DCCF;
+                font-weight: 500;
+                font-size: 25px;
+                margin-bottom: 60px;
             }
         }
 
         .secao-contato-2 {
-            width: 45%;
+            width: 36%;
             background-color: #e9dbc8;
             padding: 40px;
             border: 1px solid #4a4a4a;

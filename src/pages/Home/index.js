@@ -258,7 +258,6 @@ export default function Home() {
                     <h1>
                         Em que posso ajudar?
                     </h1>
-                    <img src='assets/images/Contato/Contato.png' alt='contato'/>
                     <p>Sinta-se a vontade para tirar dúvidas, discutir projetos e dar um feedback geral.</p>
                 </div>
                 <div className='secao-contato-2'>
