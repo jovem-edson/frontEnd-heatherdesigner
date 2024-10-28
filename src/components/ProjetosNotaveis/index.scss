@@ -1,0 +1,55 @@
+.componente-servicos {
+display: flex;
+flex-direction: column;
+// align-items: center;
+background-color: #ededed;
+border: solid 1px blue;
+padding: 50px;
+
+
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    .linha-barra-pesquisa {
+        display: flex;
+
+        .barra-pesquisa {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #FFF;
+            width: 100%;
+        }
+
+        
+    }
+
+
+    .lista-servicos {
+        border: solid 1px black;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .lista-servicos-servico {
+            display: flex;
+            justify-content: space-between;
+            border: solid 1px black;
+            display: flex;
+        
+            .servico-botoes {
+                display: flex;
+                gap: 20px
+            }
+        }
+
+        .servico-direita {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: solid 1px green;
+        }
+    }
+}

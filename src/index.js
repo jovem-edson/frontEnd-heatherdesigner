@@ -9,7 +9,7 @@ import Login from './pages/Login/index.jsx';
 import NaoEncontrado from './pages/naoEncontrado/index.jsx';
 
 // PATH DESAIGUINER
-import HomeAdmin from './pages/AdministrarTelas/HomeAdmin/index.jsx';
+import HomeAdmin from './pages/AdministrarTelas/HomeAdmin/index.js';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
