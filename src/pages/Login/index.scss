@@ -1,85 +1,110 @@
 .pagina-login {
-    display: flex;
-    height: 100vh;
-  
-    // Estilo da imagem de fundo
-    .login-image {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #f5f5f5;
-  
-      img {
-        max-width: 80%; // Ajuste o tamanho da imagem
-        height: auto;
-        object-fit: contain; // A imagem manterá sua proporção
-      }
+  display: flex;
+  height: 100vh;
+
+  .back-container {
+    position: relative;
+    align-items: center; 
+    padding: 90px 0px 0px 0px;
+    margin-left: 100px;
+
+    .arrow-icon {
+      width: 16px; 
+      height: 16px;
+      margin-right: 0.5rem;
     }
-  
-    // Estilo do formulário
-    .form {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 3rem;
-      background-color: #ffffff;
-  
-  
-      span {
-        font-size: 0.9rem;
-        color: #666;
-        margin-bottom: 1.5rem;
-        text-align: center;
-      }
-  
-      label {
-        font-size: 0.85rem;
-        color: #333;
-        margin-bottom: 0.5rem;
-        
-      }
-  
-      input {
-        width: 100%;
-        padding: 0.8rem;
-        margin-bottom: 1rem;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-      }
-   .btn-voltar {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
+
+    .voltar {
+      font-size: 1rem;
+      color: #000;
       background: none;
       border: none;
-      color: #333;
-      font-size: 1rem;
       cursor: pointer;
+    }
+  }
 
-      &:hover {
-        color: #666;
+
+
+  // Estilo da imagem de fundo
+  .login-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   // background-color: #671010;
+
+    img {
+      width: 100%; // Ajuste o tamanho da imagem
+      height: 100%;
+      object-fit: cover; // A imagem manterá sua proporção
+    }
+  }
+
+
+
+  .form {
+    flex: 1;
+        max-width: 400px;
+        margin: 150px 150px 0px 150px; // Centraliza horizontalmente e verticalmente
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center; // Centraliza o conteúdo dentro do formulário
+
+    .form-header {
+      margin-bottom: 2rem;
+
+      h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0 0 0.5rem;
+      }
+
+      span {
+        font-size: 0.9rem;
+        color: #6c757d;
       }
     }
-      button {
-      //  width: 100%;
-      display: flex;
-      
-        padding: 0.8rem;
-        background-color: #d4a254;
-        border: none;
-        border-radius: 5px;
-        color: black;
-        cursor: pointer;
-        font-weight: bold;
+
+    .input-group {
+      width: 100%;
+      margin-bottom: 1.5rem;
+
+      label {
+        display: block;
+        font-size: 0.9rem;
+        color: #6c757d;
+        margin-bottom: 0.5rem;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.75rem;
         font-size: 1rem;
-  
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+    }
+
+    .button-group {
+      width: 100%;
+
+      button {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+        background-color: #DEB35C;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
         &:hover {
-          background-color: #b68f43;
+          background-color: #DEB35C; 
         }
       }
     }
   }
-  
+
+}

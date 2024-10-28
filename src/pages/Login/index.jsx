@@ -33,26 +33,31 @@ export default function Login() {
             <div className='login-image'>
                 <img src='/assets/images/Login/login.png' alt='Login' />
             </div>
-            <div className='form'>
-                <button onClick={() => navigate('/home')}>Voltar</button>
 
-                <div>
+            <div className="back-container">
+                <img src="/assets/images/arrow_back_ios_24px.png" alt="voltar" className="arrow-icon" />
+                <button className="voltar" onClick={() => navigate('/')}>Voltar</button>
+            </div>
+
+
+            <div className="form">
+                <div className="form-header">
                     <h1>Login do Administrador</h1>
                     <span>Se você é um administrador, pode fazer login com seu endereço de e-mail e senha.</span>
                 </div>
-                <div>
+                <div className="input-group">
                     <label>Endereço de E-mail</label>
-                    <input type='text' value={email} onChange={e => setEmail(e.target.value)} />
+                    <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
-                <div>
+                <div className="input-group">
                     <label>Senha</label>
-                    <input type='text' value={senha} onChange={e => setSenha(e.target.value)} />
+                    <input type="password" value={senha} onChange={(e) => setSenha(e.target.value)} />
                 </div>
-
-                <div>
-                    <button onClick={logar}> Login </button>
+                <div className="button-group">
+                    <button onClick={logar}>Login</button>
                 </div>
             </div>
+
         </div>
     )
 }
