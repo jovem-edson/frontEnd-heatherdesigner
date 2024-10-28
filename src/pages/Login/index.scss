@@ -1,0 +1,85 @@
+.pagina-login {
+    display: flex;
+    height: 100vh;
+  
+    // Estilo da imagem de fundo
+    .login-image {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f5f5f5;
+  
+      img {
+        max-width: 80%; // Ajuste o tamanho da imagem
+        height: auto;
+        object-fit: contain; // A imagem manterá sua proporção
+      }
+    }
+  
+    // Estilo do formulário
+    .form {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem;
+      background-color: #ffffff;
+  
+  
+      span {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+  
+      label {
+        font-size: 0.85rem;
+        color: #333;
+        margin-bottom: 0.5rem;
+        
+      }
+  
+      input {
+        width: 100%;
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+   .btn-voltar {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: none;
+      border: none;
+      color: #333;
+      font-size: 1rem;
+      cursor: pointer;
+
+      &:hover {
+        color: #666;
+      }
+    }
+      button {
+      //  width: 100%;
+      display: flex;
+      
+        padding: 0.8rem;
+        background-color: #d4a254;
+        border: none;
+        border-radius: 5px;
+        color: black;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 1rem;
+  
+        &:hover {
+          background-color: #b68f43;
+        }
+      }
+    }
+  }
+  

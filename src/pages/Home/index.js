@@ -6,7 +6,7 @@ import Rodape from '../../components/rodape'
 export default function Home() {
     return (
         <div className='pagina-home'>
-            <Cabecalho />
+            <Cabecalho isAdmin={false} />
 
 
             <section className='primeira-secao'>
