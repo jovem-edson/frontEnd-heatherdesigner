@@ -1,0 +1,74 @@
+.pagina-adicionar-servico {
+    background-color: #CFC5B8;
+    font-family: 'Inter', sans-serif;
+
+    .criar-servico {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+
+        h1 {
+            font-weight: 900;
+            color: #433D4A;
+            font-size: 50px;
+        }
+
+        .linha {
+            display: flex;
+            justify-content: flex-start;
+            gap: 30px;
+            margin: 25px 0px;
+
+            .campo-input {
+                display: flex;
+                flex-direction: column;
+
+                .legenda-input {
+                    font-weight: 600;
+                    color: #433D4A;
+                    font-size: 20px;
+                    margin-bottom: 12px;
+
+                }
+
+                input {
+                    background-color: #FFF;
+                    border-radius: 10px;
+                    border: none;
+                    height: 45px;
+                    padding-left: 25px;
+                }
+
+                select {
+                        background-color: #FFF;
+                        border-radius: 10px;
+                        border: none;
+                        height: 45px;
+                        padding: 0px 25px;
+                    
+                }
+            }
+        }
+
+        .botao-salvar {
+            background-color: #433D4A;
+            width: 180px;
+            height: 50px;
+            color: white;
+            border-radius: 10px;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+        }
+    }
+
+
+}
+
+html {
+    height: 100%;
+    background-color: #CFC5B8;
+
+}

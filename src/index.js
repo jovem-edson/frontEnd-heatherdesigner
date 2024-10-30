@@ -10,6 +10,7 @@ import NaoEncontrado from './pages/naoEncontrado/index.jsx';
 
 // PATH DESAIGUINER
 import HomeAdmin from './pages/AdministrarTelas/HomeAdmin/index.js';
+import AdicionarServico from './pages/AdministrarTelas/AdicionarServico/index.js';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,7 +21,8 @@ root.render(
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
 
-        <Route path='/homeAdmin' element={<HomeAdmin />} />
+        <Route path='/admin' element={<HomeAdmin />} />
+        <Route path='/criar-servico' element={<AdicionarServico/>}/>
 
         <Route path='*' element={<NaoEncontrado />} />
       </Routes>

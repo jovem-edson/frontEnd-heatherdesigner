@@ -32,10 +32,11 @@ export default function ProjetosNotaveis() {
         <div className='componente-servicos'>
             <span className='titulo'>
                 <h1> Agenda de Serviços </h1>
-                <a> 
-                <img src='/assets/images/criar.png' className='botao-criar' alt='criar' />
 
-                </a>
+                <button onClick={() => navigate('/criar-servico')} className='botao-criar'>
+
+                <img src='/assets/images/criar.png' className='botao-criar' alt='criar' />
+        </button>
                 {/* <Link to={/criarservico}/> */}
             </span>
             <div className='linha-barra-pesquisa'>
@@ -51,19 +52,16 @@ export default function ProjetosNotaveis() {
                     return (
                         <div className='lista-servicos-servico'>
                             <div className='servico-esquerda'>
-                                <p> {item.titulo_tarefa} </p>
-                                <p> {item.cliente} </p>
-                                <p> {item.tag_tarefa} </p>
-                                <p> Entrega: {new Date(item.data_entrega).toLocaleDateString()}</p>
+                                <h2 className='titulo-servico'> {item.titulo_tarefa} </h2>
+                                <h3 className='cliente'> {item.cliente} </h3>
+                                <h4 className='tag-tarefa'> {item.tag_tarefa} </h4>
+                                <h3 className='data-entrega'> Entrega: {new Date(item.data_entrega).toLocaleDateString()}</h3>
                             </div>
 
                             <div className='servico-direita'>
 
-                                <select name="status" id="status">
-                                    <option value={item.status}> {item.status} </option>
-                                    <option value="Em Andamento"> Em andamento </option>
-                                    <option value="Entregue"> Entregue </option>
-                                </select>
+                                    <p className='status-servico'> {item.status} </p>
+
                         <span className='servico-botoes'>
                                 <img src='/assets/images/editar.png' className='botao-editar' alt='editar' />
                                 <img src='/assets/images/excluir.png' className='botao-excluir' alt='excluir' />
