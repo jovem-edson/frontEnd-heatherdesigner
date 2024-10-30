@@ -7,7 +7,7 @@ export default function Cabecalho({ isAdmin }) {
 
     function logOff() {
         localStorage.removeItem('TOKEN');
-        navigate('/home');
+        navigate('/');
     }
 
     return (
