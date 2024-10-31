@@ -8,6 +8,9 @@ import Home from './pages/Home/index.js'
 import Login from './pages/Login/index.jsx';
 import NaoEncontrado from './pages/naoEncontrado/index.jsx';
 
+//teste
+import Logar from './pages/Login/index.js';
+
 // PATH DESAIGUINER
 import HomeAdmin from './pages/AdministrarTelas/HomeAdmin/index.js';
 import AdicionarServico from './pages/AdministrarTelas/AdicionarServico/index.js';
@@ -20,7 +23,7 @@ root.render(
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/login' element={<Logar />} />
 
         <Route path='/admin' element={<HomeAdmin />} />
         <Route path='/criar-servico' element={<AdicionarServico/>}/>
