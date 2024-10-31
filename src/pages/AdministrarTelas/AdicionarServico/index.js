@@ -33,7 +33,7 @@ export default function AdicionarServico() {
 
         setTitulo(resp.data.titulo);
         setNomeCliente(resp.data.nomeCliente);
-        setDataEntrega(resp.data.dataEntrega.substr(0, 10));
+        setDataEntrega(resp.data.dataEntrega);
         setStatus(resp.data.status);
         setTag(resp.data.tag);
     }
@@ -43,10 +43,12 @@ export default function AdicionarServico() {
         let body = {
             'titulo': titulo,
             'nomeCliente': nomeCliente,
-            'dataEntrega': dataEntrega,
+            'tag': tag,
             'status': status,
-            'tag': tag
+            'dataEntrega': dataEntrega
         }
+
+        console.log(body)
 
         let token = localStorage.getItem('TOKEN');
 
