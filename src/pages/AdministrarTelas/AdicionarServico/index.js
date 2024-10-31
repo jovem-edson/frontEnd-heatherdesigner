@@ -3,15 +3,15 @@ import Cabecalho from '../../../components/cabecalho';
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 
 
 export default function AdicionarServico() {
     const [titulo, setTitulo] = useState('');
     const [dataEntrega, setDataEntrega] = useState('');
     const [nomeCliente, setNomeCliente] = useState('');
-    const [status, setStatus] = useState('');
-    const [tag, setTag] = useState('');
+    const [status, setStatus] = useState('Não Iniciado');
+    const [tag, setTag] = useState('Design Gráfico');
 
     const navigate = useNavigate();
 
@@ -40,6 +40,7 @@ export default function AdicionarServico() {
 
 
     async function salvar() {
+
         let body = {
             'titulo': titulo,
             'nomeCliente': nomeCliente,
@@ -50,20 +51,26 @@ export default function AdicionarServico() {
 
         console.log(body)
 
+
         let token = localStorage.getItem('TOKEN');
 
         if (id == undefined) {
             let resp = await axios.post('http://localhost:3010/servico', body, { headers: { 'x-access-token': token } });
-            alert('Novo registro inserido: ' + resp.data.novoId);
+            // alert(`Registro de ID ${resp.data.novoId} adicionado`);
+            navigate('/admin', { state: { refresh: true } });
+
         }
         else {
             let resp = await axios.put('http://localhost:3010/servico/' + id, body, { headers: { 'x-access-token': token } });
-            alert('Registro alterado');
+            // alert(`Registro de ID ${id} alterado`);
+            navigate('/admin', { state: { refresh: true } });
+
         }
 
-        navigate('/admin');
+
     }
 
+   
 
     return (
         <div className='pagina-adicionar-servico' isAdmin={true}>
@@ -127,7 +134,11 @@ export default function AdicionarServico() {
                         </div>
                     </span>
 
+                    <Link to="/admin">
+
                     <button className='botao-salvar' onClick={salvar}> {id == undefined ? 'Salvar' : 'Alterar'} </button>
+
+                    </Link>
                 </form>
             </div>
         </div>
