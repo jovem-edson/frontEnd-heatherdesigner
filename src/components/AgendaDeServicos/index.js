@@ -68,11 +68,11 @@ export default function AgendaDeServicos() {
                                 <p className='status-servico'> {item.status} </p>
 
                                 </span>
-                                <p className='cliente'> {item.nomeCliente} </p>
-                                <p className='tag-tarefa'> {item.tag} </p>
+                                <p className='cliente'> Cliente: {item.nomeCliente} </p>
+                                <p className='tag-tarefa'> Tag: {item.tag} </p>
 
                                 <span className='servico-botoes'>
-                                <p className='data-entrega'> Entrega: {new Date(item.dataEntrega).toLocaleDateString()}</p>
+                                <p className='data-entrega'> Data de Entrega: {new Date(item.dataEntrega).toLocaleDateString()}</p>
                                 <div className='botoes'>
                                     <img onClick={() => navigate('/criar-servico/' + item.id)} src='/assets/images/editar.png' className='botao-editar' alt='editar' />
                                     <img onClick={() => excluir(item.id)} src='/assets/images/excluir.png' className='botao-excluir' alt='excluir' />

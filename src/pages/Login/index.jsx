@@ -9,6 +9,13 @@ export default function Login() {
     const [senha, setSenha] = useState('')
 
     const navigate = useNavigate();
+  
+    const handleSubmit = event => {
+      event.preventDefault();
+  
+      console.log('form submitted ✅');
+    };
+
 
     async function logar() {
         try {
@@ -40,23 +47,26 @@ export default function Login() {
             </div>
 
 
-            <div className="form">
+            <form className="form" onSubmit={handleSubmit}>
                 <div className="form-header">
                     <h1>Login do Administrador</h1>
                     <span>Se você é um administrador, pode fazer login com seu endereço de e-mail e senha.</span>
                 </div>
                 <div className="input-group">
                     <label>Endereço de E-mail</label>
-                    <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input type="text" value={email} onChange={(e) => {
+                        setEmail(e.target.value)
+                    } 
+                }/>
                 </div>
                 <div className="input-group">
                     <label>Senha</label>
                     <input type="password" value={senha} onChange={(e) => setSenha(e.target.value)} />
                 </div>
                 <div className="button-group">
-                    <button onClick={logar}>Login</button>
+                    <button onClick={logar} type='submit'>Login</button>
                 </div>
-            </div>
+            </form>
 
         </div>
     )

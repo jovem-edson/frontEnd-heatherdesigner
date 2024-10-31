@@ -33,7 +33,7 @@ export default function AdicionarServico() {
 
         setTitulo(resp.data.titulo);
         setNomeCliente(resp.data.nomeCliente);
-        setDataEntrega(resp.data.dataEntrega);
+        setDataEntrega(resp.data.dataEntrega.substr(0, 10));
         setStatus(resp.data.status);
         setTag(resp.data.tag);
     }
@@ -75,7 +75,7 @@ export default function AdicionarServico() {
                     <div className='spacer'>
                     <button onClick={() => navigate('/admin')} className='botao-criar'>
                     <img src='/assets/images/seta-voltar.png' className='botao-voltar' alt='voltar' />
-
+                    <h2> Voltar </h2>
                     </button>
                     </div>
                     <h1>{id == undefined ? 'Adicionar Serviço' : 'Editar Serviço'}</h1>
@@ -111,6 +111,13 @@ export default function AdicionarServico() {
                         </div>
 
                         <div className='campo-input'>
+                            <label className='legenda-input' for="tag"> Tag da Tarefa:</label>
+                            <select id="status" value={tag} onChange={e => setTag(e.target.value)} name="tag">
+                                <option value="Design Gráfico">Design Gráfico</option>
+                                <option value="Design Digital">Design Digital</option>
+                            </select></div>
+
+                        <div className='campo-input'>
                             <label className='legenda-input' for="status">Status:</label>
                             <select id="status" value={status} onChange={e => setStatus(e.target.value)} name="status">
                                 <option value="Não Iniciado">Não Iniciado</option>
@@ -118,14 +125,6 @@ export default function AdicionarServico() {
                                 <option value="Concluído">Concluído</option>
                             </select>
                         </div>
-
-                        <div className='campo-input'>
-                            <label className='legenda-input' for="tag"> Tag da Tarefa:</label>
-                            <select id="status" value={tag} onChange={e => setTag(e.target.value)} name="tag">
-                                <option value="design_grafico">Design Gráfico</option>
-                                <option value="design_digital">Design Digital</option>
-                            </select></div>
-
                     </span>
 
                     <button className='botao-salvar' onClick={salvar}> {id == undefined ? 'Salvar' : 'Alterar'} </button>

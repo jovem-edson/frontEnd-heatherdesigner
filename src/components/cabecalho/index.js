@@ -16,27 +16,27 @@ export default function Cabecalho({ isAdmin }) {
                 <h1 className='cabecalho-titulo'>Heather</h1>
 
                 <nav className='cabecalho-nav'>
-                    <a href='../../pages/Home/index.js' className='cabecalho-nav-item-link'>
+                    <a  className='cabecalho-nav-item-link'>
                         Home
                     </a>
-                    <a href='../../pages/Home/index.js' className='cabecalho-nav-item-link'>
+                    <a  className='cabecalho-nav-item-link'>
                         Portfólio
                     </a>
-                    <a href='../../pages/Home/index.js' className='cabecalho-nav-item-link'>
+                    <a className='cabecalho-nav-item-link'>
                         Serviços
                     </a>
 
                     {isAdmin ? (
                         <>
-                            <a href='../../pages/Home/index.js' className='cabecalho-nav-item-link'>
+                            <a className='cabecalho-nav-item-link'>
                                 Mensagens
                             </a>
-                            <a href='../../pages/Home/index.js' className='cabecalho-nav-item-link'>
+                            <a className='cabecalho-nav-item-link'>
                                 Agenda
                             </a>
                         </>
                     ) : (
-                        <a href='../../pages/Home/index.js' className='cabecalho-nav-item-link'>
+                        <a className='cabecalho-nav-item-link'>
                             Sobre
                         </a>
                     )}
