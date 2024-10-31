@@ -1,0 +1,127 @@
+.agenda-servicos {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    padding: 50px;
+    font-family: 'Inter', sans-serif;
+
+
+
+    .titulo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        margin-bottom: 20px;
+
+        h1 {
+            font-weight: 900;
+            color: #433D4A;
+            font-size: 50px;
+        }
+
+        button {
+            border: none;
+            background-color: transparent;
+            padding: 10px;
+            cursor: pointer;
+        }
+    }
+
+    .linha-barra-pesquisa {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .barra-pesquisa {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #FFF;
+            width: 60%;
+            border-radius: 45px;
+            height: 45px;
+            padding: 20px;
+        }
+
+        img {
+            width: 33px;
+            height: 33px;
+        }
+
+
+    }
+
+
+    .lista-servicos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+
+
+        .lista-servicos-servico {
+            display: flex;
+            justify-content: space-between;
+            background-color: #E4DCCF;
+            border-radius: 20px;
+            margin-top: 24px;
+            padding: 20px;
+            box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.20);
+            flex-direction: column;
+            gap: 5px;
+            width: 800px;
+
+
+            .linha {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .servico-botoes {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 30px;
+
+                .data-entrega {
+                    font-weight: 700;
+                    font-size: 25px;
+                }
+                
+                .botoes {
+                    display: flex;
+                    gap: 10px;
+
+                
+                img {
+                    width: 60px;
+                    cursor: pointer;
+                }
+            }
+            }
+        }
+
+            .titulo-servico {
+                font-size: 30px;
+            }
+
+            .status-servico {
+                font-weight: 700;
+            }
+
+            .cliente {
+                font-size: 20px;
+            }
+
+            .tag-tarefa {
+                font-size: 15px;
+            }
+
+           
+        
+
+        
+    }
+}

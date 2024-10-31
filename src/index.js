@@ -19,10 +19,12 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
         <Route path='/login' element={<Login />} />
 
         <Route path='/admin' element={<HomeAdmin />} />
         <Route path='/criar-servico' element={<AdicionarServico/>}/>
+        <Route path='/criar-servico/:id' element={<AdicionarServico />} />
 
         <Route path='*' element={<NaoEncontrado />} />
       </Routes>

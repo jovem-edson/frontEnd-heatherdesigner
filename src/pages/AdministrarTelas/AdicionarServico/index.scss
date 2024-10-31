@@ -2,6 +2,38 @@
     background-color: #CFC5B8;
     font-family: 'Inter', sans-serif;
 
+    .linha-voltar {
+        display: flex;
+        justify-content: space-between;
+
+
+        width: 100%;
+        padding-inline: 200px;
+margin-bottom: -20px;
+
+.spacer {
+    width: 100px;
+}
+
+h1 {
+    font-weight: 900;
+    color: #433D4A;
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+        button {
+            border: none;
+            background-color: transparent;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        img {
+            width: 50px;
+        }
+    }
+
     .criar-servico {
         display: flex;
         flex-direction: column;
@@ -9,11 +41,7 @@
         align-items: center;
         padding: 50px;
 
-        h1 {
-            font-weight: 900;
-            color: #433D4A;
-            font-size: 50px;
-        }
+
 
         .linha {
             display: flex;
@@ -38,16 +66,16 @@
                     border-radius: 10px;
                     border: none;
                     height: 45px;
-                    padding-left: 25px;
+                    padding: 0px 25px;
                 }
 
                 select {
-                        background-color: #FFF;
-                        border-radius: 10px;
-                        border: none;
-                        height: 45px;
-                        padding: 0px 25px;
-                    
+                    background-color: #FFF;
+                    border-radius: 10px;
+                    border: none;
+                    height: 45px;
+                    padding: 0px 25px;
+
                 }
             }
         }
@@ -61,6 +89,7 @@
             border: none;
             font-family: 'Inter', sans-serif;
             font-size: 24px;
+            cursor: pointer;
         }
     }
 
