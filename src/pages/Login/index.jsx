@@ -21,7 +21,7 @@ export default function Login() {
 
             localStorage.setItem('TOKEN', resp.data.token);
 
-            navigate('/homeAdmin'); //Ira para tela de Desaiguiner XD
+            navigate('/admin'); //Ira para tela de Desaiguiner XD
 
         }
         catch (err) {
