@@ -13,8 +13,13 @@ export default function Cabecalho({ isAdmin }) {
     return (
         <header className='cabecalho'>
             <div className='cabecalho-container'>
-                <h1 className='cabecalho-titulo'>Heather</h1>
+                {isAdmin ? (
+                <h1 className='cabecalho-titulo' style={{
+                    width: 231 + 'px'}}>Heather</h1>
+                ) : (
+                    <h1 className='cabecalho-titulo'>Heather</h1>
 
+                )}
                 <nav className='cabecalho-nav'>
                     <a  className='cabecalho-nav-item-link'>
                         Home
@@ -43,7 +48,8 @@ export default function Cabecalho({ isAdmin }) {
                 </nav>
 
                 {isAdmin ? (
-                    <div className="cabecalho-admin">
+                    <div className="cabecalho-admin" style={{
+    width: 231 + 'px'}}>
                         <p className='cabecalho-title-adm'>
                             <span>Olá Heather</span>
                         </p>
