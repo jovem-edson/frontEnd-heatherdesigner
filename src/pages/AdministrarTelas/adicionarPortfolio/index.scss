@@ -1,0 +1,49 @@
+.pagina-adicionar-portfolio {
+    font-family: 'Inter', sans-serif;
+
+    .linha-voltar {
+        display: flex;
+        justify-content: space-between;
+
+
+        width: 100%;
+        padding-inline: 200px;
+        margin-bottom: -20px;
+
+
+        .spacer {
+            gap: 10px;
+            width: 300px;
+
+            button {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 1px;
+
+                h2 {
+                    font-size: 25px;
+                }
+            }
+        }
+
+        h1 {
+            font-weight: 900;
+            color: #433D4A;
+            font-size: 50px;
+            margin-bottom: 50px;
+        }
+
+        button {
+            border: none;
+            background-color: transparent;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        img {
+            width: 50px;
+        }
+    }
+
+}
