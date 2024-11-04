@@ -169,7 +169,7 @@ export default function HomeAdmin() {
                    */
                     ))}
                 </div>
-                <button>Ver Todos</button>
+                <button className='botao-projetos'>Ver Todos</button>
             </section>
 
 
