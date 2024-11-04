@@ -1,4 +1,11 @@
 .cabecalho {
+
+    position: fixed;  // Mantém o cabeçalho fixo no topo
+    top: 0;           // Alinha o cabeçalho ao topo da página
+    width: 100%;      // Garante que o cabeçalho ocupe toda a largura
+    z-index: 1000;    // Garante que o cabeçalho fique acima de outros elementos
+
+
     background-color: #F4EDE4;
     padding: 25px 100px;
 

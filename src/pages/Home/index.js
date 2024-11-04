@@ -5,7 +5,7 @@ import Rodape from '../../components/rodape'
 
 export default function Home() {
     return (
-        <div className='pagina-home'>
+        <div id='sobre' className='pagina-home'>
             <Cabecalho isAdmin={false} />
 
 
@@ -103,7 +103,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className='terceira-secao-experiencias'>
+            <section id='portfolio' className='terceira-secao-experiencias'>
                 <div className='titulo-sub'>
                     <h1> Minhas experiências </h1>
                     <p className='informacao'>
@@ -133,7 +133,7 @@ export default function Home() {
             </section>
 
 
-            <section className='quarta-secao-projetos-notaveis'>
+            <section id='servicos' className='quarta-secao-projetos-notaveis'>
                 <h1> Projetos Notáveis </h1>
                 <div className='grid-projetos'>
                     <div className='grid-projetos-cartao'>
@@ -253,7 +253,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className='setima-secao-contato'>
+            <section id='contato' className='setima-secao-contato'>
                 <div className='secao-contato-1'>
                     <h1>
                         Em que posso ajudar?
