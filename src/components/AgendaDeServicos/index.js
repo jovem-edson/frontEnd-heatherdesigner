@@ -41,6 +41,7 @@ export default function AgendaDeServicos() {
 
     return (
         <div className='agenda-servicos'>
+            
             <span className='titulo'>
                 <h1> Agenda de Serviços </h1>
 
@@ -50,6 +51,7 @@ export default function AgendaDeServicos() {
                 </button>
                 {/* <Link to={/criarservico}/> */}
             </span>
+            
             <div className='linha-barra-pesquisa'>
                 <div className='barra-pesquisa'>
                     <p> Insira um nome... </p>

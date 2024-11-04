@@ -21,13 +21,17 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
+        {/* ROTA PARA O USUARIO*/}
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
-        <Route path='/login' element={<Logar />} />
+        <Route path='/login' element={<Login />} />
 
+        {/* ROTA PARA O ADMINISTRADOR*/}
         <Route path='/admin' element={<HomeAdmin />} />
         <Route path='/criar-servico' element={<AdicionarServico/>}/>
         <Route path='/criar-servico/:id' element={<AdicionarServico />} />
+
+
 
         <Route path='*' element={<NaoEncontrado />} />
       </Routes>

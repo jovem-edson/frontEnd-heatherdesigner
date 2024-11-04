@@ -1,8 +1,7 @@
-import './index.scss'
-import { useNavigate } from 'react-router-dom'
+import './index.scss';
+import { useNavigate } from 'react-router-dom';
 
 export default function Cabecalho({ isAdmin }) {
-
     const navigate = useNavigate();
 
     function logOff() {
@@ -16,29 +15,20 @@ export default function Cabecalho({ isAdmin }) {
                 <h1 className='cabecalho-titulo'>Heather</h1>
 
                 <nav className='cabecalho-nav'>
-                    <a  className='cabecalho-nav-item-link'>
-                        Home
-                    </a>
-                    <a  className='cabecalho-nav-item-link'>
-                        Portfólio
-                    </a>
-                    <a className='cabecalho-nav-item-link'>
-                        Serviços
-                    </a>
-
                     {isAdmin ? (
                         <>
-                            <a className='cabecalho-nav-item-link'>
-                                Mensagens
-                            </a>
-                            <a className='cabecalho-nav-item-link'>
-                                Agenda
-                            </a>
+                            <a onClick={() => navigate('/admin')} className='cabecalho-nav-item-link'>Home</a>
+                            <a onClick={() => navigate('/admin')} className='cabecalho-nav-item-link'>Portfólio</a>
+                            <a onClick={() => navigate('/admin')} className='cabecalho-nav-item-link'>Agenda</a>
+                            <a onClick={() => navigate('/admin')} className='cabecalho-nav-item-link'>Mensagens</a>
                         </>
                     ) : (
-                        <a className='cabecalho-nav-item-link'>
-                            Sobre
-                        </a>
+                        <>
+                            <a href='#sobre' className='cabecalho-nav-item-link'>Sobre</a>
+                            <a href='#portfolio' className='cabecalho-nav-item-link'>Portfólio</a>
+                            <a href='#servicos' className='cabecalho-nav-item-link'>Serviços</a>
+                            <a href='#contato' className='cabecalho-nav-item-link'>Contato</a>
+                        </>
                     )}
                 </nav>
 
@@ -62,5 +52,5 @@ export default function Cabecalho({ isAdmin }) {
                 )}
             </div>
         </header>
-    )
+    );
 }
