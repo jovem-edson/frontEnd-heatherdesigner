@@ -23,7 +23,7 @@ export default function Cabecalho({ isAdmin }) {
                     {isAdmin ? (
                         <>
                             <a onClick={() => navigate('/admin')} className='cabecalho-nav-item-link'>Home</a>
-                            <a onClick={() => navigate('/admin')} className='cabecalho-nav-item-link'>Portfólio</a>
+                            <a onClick={() => navigate('/criar-portfolio')} className='cabecalho-nav-item-link'>Portfólio</a>
                             <a onClick={() => navigate('/admin')} className='cabecalho-nav-item-link'>Agenda</a>
                             <a onClick={() => navigate('/admin')} className='cabecalho-nav-item-link'>Mensagens</a>
                         </>
