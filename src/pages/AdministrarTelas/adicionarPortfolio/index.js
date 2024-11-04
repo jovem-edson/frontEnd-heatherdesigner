@@ -12,7 +12,7 @@ id_portfolio INT PRIMARY KEY AUTO_INCREMENT,
     descricao TEXT,
     data_realizacao DATE
 );
-*/ 
+*/
 
 export default function AdicionarPortfolio() {
     const [imagem, setImagem] = useState('');
@@ -75,7 +75,7 @@ export default function AdicionarPortfolio() {
 
     }
 
-   
+
 
     return (
         <div className='pagina-adicionar-portfolio' isAdmin={true}>
@@ -85,19 +85,49 @@ export default function AdicionarPortfolio() {
 
                 <span className='linha-voltar'>
                     <div className='spacer'>
-                    <button onClick={() => navigate('/admin')} className='botao-criar'>
-                    <img src='/assets/images/seta-voltar.png' className='botao-voltar' alt='voltar' />
-                    <h2> Voltar </h2>
-                    </button>
+                        <button onClick={() => navigate('/admin')} className='botao-criar'>
+                            <img src='/assets/images/seta-voltar.png' className='botao-voltar' alt='voltar' />
+                            <h2> Voltar </h2>
+                        </button>
                     </div>
+                    <div className='titulo-secao-portfolio'>
                     <h1>{id == undefined ? 'Adicionar Projeto' : 'Editar Projeto'}</h1>
+                    </div>
                     <div className='spacer'>
                     </div>
                 </span>
 
 
-                <form>
-                    {/*
+
+                <form className='formulario'>
+                    <div class='container-formulario'>
+
+                        <div>
+                            <label for='titulo-portfolio'>Título do Projeto</label>
+                                <input type="text" value={titulo} onChange={(e) => {
+                                    setTitulo(e.target.value)
+                                }} placeholder='Insira o título do projeto...' />
+                        </div>
+
+                        <div>
+                            <label for='data-realizacao'>Data de Realização</label>
+
+                                <input type="date" value={dataRealizacao} onChange={(e) => setDataRealizacao(e.target.value)} />
+                        </div>
+
+                        <div>
+                            <label for='descricao'>Descrição do Projeto</label>
+                                <textarea value={descricao} onChange={(e) => setDescricao(e.target.value)} placeholder='Insira a descrição do projeto...' />
+                        </div>
+
+                        <Link to="/admin">
+
+                            <button className='botao-salvar' onClick={salvar}> {id == undefined ? 'Salvar' : 'Alterar'} </button>
+
+                        </Link>
+
+
+                        {/*
                     <span className='linha'>
                         <div className='campo-input'>
                             <label className='legenda-input' for='titulo-servico'>
@@ -145,6 +175,14 @@ export default function AdicionarPortfolio() {
                     <button className='botao-salvar' onClick={salvar}> {id == undefined ? 'Salvar' : 'Alterar'} </button>
 
                     </Link> */}
+                    </div>
+
+                    <div className='container-imagem'>
+                        <label for='descricao'>Imagem do Projeto</label>
+                        <div className='placeholder'>
+                            <img src='/assets/images/placeholder.svg' alt='enviar-imagem' />
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

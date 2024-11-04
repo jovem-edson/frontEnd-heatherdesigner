@@ -1,14 +1,20 @@
 .pagina-adicionar-portfolio {
+    
     font-family: 'Inter', sans-serif;
 
     .linha-voltar {
         display: flex;
         justify-content: space-between;
-
-
         width: 100%;
         padding-inline: 200px;
-        margin-bottom: -20px;
+        margin-top: 40px;
+
+        .titulo-secao-portfolio{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+    }
 
 
         .spacer {
@@ -46,4 +52,83 @@
         }
     }
 
-}
+    .formulario {
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+
+    .container-formulario {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        width: 500px;
+
+
+        div {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+        label {
+                font-weight: 900;
+                    color: #433D4A;
+                    font-size: 20px;
+                    margin-bottom: 12px;
+        }    
+    
+        input, textarea {
+                margin-top: 5px;
+                padding: 10px;
+                font-size: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: #fff;
+                width: 100%;
+                font-family: 'Inter', sans-serif;
+                color: #757587ff;
+            }
+
+            textarea {
+                height: 120px;
+            }
+
+            button {
+                background-color: #433D4A;
+            width: 180px;
+            height: 50px;
+            color: white;
+            border-radius: 10px;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: #000000;
+                }
+            }
+
+
+            .container-imagem {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .placeholder {
+                    background-color: #EDEDED;
+                    height: 300px;
+                    width: 300px;
+                    display: flex;
+                    justify-content: center;
+                    border-radius: 25px
+                    
+                
+
+            }
+
+            }
+
+        }
+    }
