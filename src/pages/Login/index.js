@@ -52,7 +52,7 @@ export default function Logar(){
 
                     <div className='formulario-caixa'>
                         <div className='formulario'>
-                            <form>
+                            <form onSubmit={handleSubmit}>
                                 <div className='titulo-formulario'>
                                     <h2>Login do Administrador</h2>
                                     <p>Se você é um administrador, pode fazer login com seu endereço de e-mail e senha.</p>
@@ -63,13 +63,15 @@ export default function Logar(){
 
                                 <div>
                                     <label>Endereço de Email
-                                    <input/>
+                                    <input type="text" value={email} onChange={(e) => {
+                        setEmail(e.target.value)
+                    } }/>
                                     </label>
                                 </div>
 
                                 <div>
                                     <label>Senha
-                                    <input/>
+                                    <input type="password" value={senha} onChange={(e) => setSenha(e.target.value)} />
                                     </label>
 
                                     <div className='alterarSenha'>
@@ -80,7 +82,7 @@ export default function Logar(){
                                 
 
                                 <div>
-                                    <button>Login</button>
+                                    <button onClick={logar} type='submit'>Login</button>
                                     
                                 </div>
 
