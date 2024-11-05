@@ -100,6 +100,52 @@ export default function HomeAdmin() {
         }
 
 
+        //LÓGICA PARA A MENSAGEM
+        const [listaMensagem, setListaMensagem] = useState([{
+            "id_mensagem": 1,
+            "nome": "Mike Ehrmantraut",
+            "email": "mikeehrmantraut@gmail.com",
+            "assunto": "Photoshop",
+            "corpo_mensagem": "faça.",
+            "data_mensagem": "2025-03-04"
+        }]);
+
+        const [atualizarListaMensagem, setAtualizarListaMensagem] = useState(false); // Estado para controlar atualização
+    
+        useEffect(() => {
+            if (localStorage.getItem('TOKEN') == undefined) {
+                navigate('/login');
+            }
+            buscarMensagem();
+        }, [atualizarListaMensagem]); // Dependendo de atualizarLista
+    
+        useEffect(() => {
+            // Verifica se o estado de atualização foi passado
+            if (location.state && location.state.refresh) {
+                setAtualizarListaMensagem(true); // Atualiza a lista
+            }
+        }, [location.state]);
+    
+        async function buscarMensagem() {
+            let resp = await axios.get('http://localhost:3010/mensagem');
+            setListaMensagem(resp.data);
+            setAtualizarListaMensagem(false); // Reseta a flag de atualização
+        }
+    
+        async function buscarMensagem() {
+            let resp = await axios.get('http://localhost:3010/mensagem');
+    
+            setListaMensagem(resp.data);
+        }
+    
+        async function excluirMensagem(id) {
+            await axios.delete('http://localhost:3010/mensagem/' + id);
+            alert(`Registro de ${id} excluído`);
+    
+            await buscarMensagem();
+        }
+
+
     return (
         <div className='pagina-home-admin' isAdmin={true}>
             <Cabecalho isAdmin={true} />
@@ -127,46 +173,6 @@ export default function HomeAdmin() {
                     onEdit
                     onDelete/>
                         </div>
-        /*                <div className='projeto'>
-                        <Card
-                    imagem="/assets/images/projetos-notaveis-1.png"
-                    titulo="juseeeeeeeeeeee"
-                    descricao="sssssssssss"
-                    data_realizacao="loll"
-                    onEdit
-                    onDelete/>
-                        </div>
-
-                        <div className='projeto'>
-                        <Card
-                    imagem="/assets/images/projetos-notaveis-1.png"
-                    titulo="juseeeeeeeeeeee"
-                    descricao="sssssssssss"
-                    data_realizacao="loll"
-                    onEdit
-                    onDelete/>
-                        </div>
-
-                        <div className='projeto'>
-                        <Card
-                    imagem="/assets/images/projetos-notaveis-1.png"
-                    titulo="juseeeeeeeeeeee"
-                    descricao="sssssssssss"
-                    data_realizacao="loll"
-                    onEdit
-                    onDelete/>
-                        </div>
-
-                        <div className='projeto'>
-                        <Card
-                    imagem="/assets/images/projetos-notaveis-1.png"
-                    titulo="juseeeeeeeeeeee"
-                    descricao="sssssssssss"
-                    data_realizacao="loll"
-                    onEdit
-                    onDelete/>
-                        </div>
-                   */
                     ))}
                 </div>
                 <button className='botao-projetos'>Ver Todos</button>
@@ -220,6 +226,47 @@ export default function HomeAdmin() {
 
 
         </div>
+
+        <section className='lista-mensagens'>
+            <span className='titulo'>
+                <h1> Mensagens </h1>
+            </span>
+            <div className='linha-barra-pesquisa'>
+                <div className='barra-pesquisa'>
+                    <p> Insira um nome... </p>
+                    <img src='/assets/images/lupa.png' alt='lupa' />
+                </div>
+                <img src='/assets/images/filtro.png' alt='filtrar' />
+            </div>
+
+            <div className='lista-mensagens'>
+                {listaMensagem.map(mensagem => {
+                    return (
+                        <div className='lista-mensagens-mensagem'>
+                                <div className='mensagem-info'>
+                                    <p className='mensagem-nome-cliente'>{mensagem.nome}</p>
+                                    <p className='mensagem-nome-cliente'>{mensagem.email}</p>
+                                 </div>
+
+                                 <div className='mensagem-info'>
+                                    <p className='mensagem-assunto'>Assunto: {mensagem.assunto}</p>
+                                 </div>
+
+                                 <div className='mensagem-info'>
+                                    <p className='status-servico'> {mensagem.status} </p>
+                                    <p className='mensagem-data'>{mensagem.data}</p>
+                                 </div>         
+                        </div>
+                    );
+                })}
+            </div>
+
+
+        </section>
+
+
+
+
         </div>
     )
 }
