@@ -186,4 +186,22 @@
             
         }
     }
+
+    .mensagens-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .lista-mensagens {
+            display: flex;
+            flex-direction: column;
+            gap: 30pc;
+        }
+
+        .lista-mensagens-mensagem {
+            display: flex;
+            justify-content: space-between;
+        }
+
+    }
 }

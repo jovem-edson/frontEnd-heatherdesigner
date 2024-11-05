@@ -227,7 +227,7 @@ export default function HomeAdmin() {
 
         </div>
 
-        <section className='lista-mensagens'>
+        <section className='mensagens-container'>
             <span className='titulo'>
                 <h1> Mensagens </h1>
             </span>
@@ -254,14 +254,12 @@ export default function HomeAdmin() {
 
                                  <div className='mensagem-info'>
                                     <p className='status-servico'> {mensagem.status} </p>
-                                    <p className='mensagem-data'>{mensagem.data}</p>
+                                    <p className='mensagem-data'>{mensagem.data_mensagem}</p>
                                  </div>         
                         </div>
                     );
                 })}
             </div>
-
-
         </section>
 
 
