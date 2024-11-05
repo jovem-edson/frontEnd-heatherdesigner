@@ -19,6 +19,7 @@ export default function AdicionarPortfolio() {
     const [titulo, setTitulo] = useState('');
     const [descricao, setDescricao] = useState('');
     const [dataRealizacao, setDataRealizacao] = useState('');
+    const [imagemUrl, setImagemUrl] = useState('/assets/images/placeholder.svg')
 
     const navigate = useNavigate();
 
@@ -48,7 +49,7 @@ export default function AdicionarPortfolio() {
     async function salvar() {
 
         let body = {
-            'imagem': imagem,
+            'imagem': imagemUrl,
             'titulo': titulo,
             'descricao': descricao,
             'dataRealizacao': dataRealizacao
@@ -74,6 +75,18 @@ export default function AdicionarPortfolio() {
 
 
     }
+
+    const inserirImagem = () => {
+        document.getElementById('file-input').click();
+    };
+
+    const alterarImagem = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            setImagem(file);
+            setImagemUrl(URL.createObjectURL(file));
+        }
+    };
 
 
 
@@ -126,63 +139,23 @@ export default function AdicionarPortfolio() {
 
                         </Link>
 
-
-                        {/*
-                    <span className='linha'>
-                        <div className='campo-input'>
-                            <label className='legenda-input' for='titulo-servico'>
-                                Título do Serviço
-                            </label>
-                            <input type="text" value={titulo} onChange={e => setTitulo(e.target.value)} id="servico" name="titulo-servico" placeholder="Insira o título do projeto..." />
-                        </div>
-
-                        <div className='campo-input'>
-                            <label className='legenda-input' for='data-entrega'>
-                                Data de Entrega
-                            </label>
-                            <input type="date" value={dataEntrega} onChange={e => setDataEntrega(e.target.value)} id="data-entrega" name="data-entrega" placeholder="Insira a Data de Entrega" />
-                        </div>
-
-                    </span>
-
-                    <span className='linha'>
-                        <div className='campo-input'>
-                            <label className='legenda-input' for='nome-cliente'>
-                                Nome do Cliente
-                            </label>
-                            <input type="text" value={nomeCliente} onChange={e => setNomeCliente(e.target.value)} id="nome" name="nome-cliente" placeholder="Insira o título do projeto..." />
-                        </div>
-
-                        <div className='campo-input'>
-                            <label className='legenda-input' for="tag"> Tag da Tarefa:</label>
-                            <select id="status" value={tag} onChange={e => setTag(e.target.value)} name="tag">
-                                <option value="Design Gráfico">Design Gráfico</option>
-                                <option value="Design Digital">Design Digital</option>
-                            </select></div>
-
-                        <div className='campo-input'>
-                            <label className='legenda-input' for="status">Status:</label>
-                            <select id="status" value={status} onChange={e => setStatus(e.target.value)} name="status">
-                                <option value="Não Iniciado">Não Iniciado</option>
-                                <option value="Em Andamento">Em Andamento</option>
-                                <option value="Concluído">Concluído</option>
-                            </select>
-                        </div>
-                    </span>
-
-                    <Link to="/admin">
-
-                    <button className='botao-salvar' onClick={salvar}> {id == undefined ? 'Salvar' : 'Alterar'} </button>
-
-                    </Link> */}
                     </div>
+
+                    
 
                     <div className='container-imagem'>
-                        <label for='descricao'>Imagem do Projeto</label>
-                        <div className='placeholder'>
-                            <img src='/assets/images/placeholder.svg' alt='enviar-imagem' />
-                        </div>
+                    <label htmlFor='imagem'>Imagem do Projeto</label>
+                    <div  className={imagemUrl == '/assets/images/placeholder.svg' ? 'placeholder': 'placeholder overflow'} onClick={inserirImagem} style={{ cursor: 'pointer' }}>
+                        <img  src={imagemUrl} alt='enviar-imagem' />
                     </div>
+                    <input
+                        type="file"
+                        id="file-input"
+                        accept="image/*"
+                        style={{ display: 'none' }} // Esconde o input de arquivo
+                        onChange={alterarImagem} // Chama a função ao mudar
+                    />
+                </div>
                 </form>
             </div>
         </div>
