@@ -3,6 +3,8 @@ import axios from 'axios'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { API_URL } from '../../api/constantes';
+
 export default function Logar(){
 
     const [email, setEmail] = useState('')
@@ -24,7 +26,7 @@ export default function Logar(){
                 "senha": senha
             }
 
-            let resp = await axios.post('http://localhost:3010/login', body);
+            let resp = await axios.post(`${API_URL}/login`, body);
 
             localStorage.setItem('TOKEN', resp.data.token);
 
