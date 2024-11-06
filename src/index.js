@@ -5,7 +5,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 // PATH USUARIO
 import Home from './pages/Home/index.js'
-import Login from './pages/Login/index.jsx';
 import NaoEncontrado from './pages/naoEncontrado/index.jsx';
 
 //teste
@@ -25,7 +24,7 @@ root.render(
         {/* ROTA PARA O USUARIO*/}
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/login' element={<Logar />} />
 
         {/* ROTA PARA O ADMINISTRADOR*/}
         <Route path='/admin' element={<HomeAdmin />} />
