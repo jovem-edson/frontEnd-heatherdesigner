@@ -1,9 +1,78 @@
 import './index.scss'
 
+import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom';
+import axios from 'axios';
+
+
 import Cabecalho from '../../components/cabecalho'
 import Rodape from '../../components/rodape'
+import Carrossel from '../../components/Carrossel'
+
 
 export default function Home() {
+    const location = useLocation();
+
+     //LÓGICA PARA O PORTFÓLIO
+     const [listaPortfolio, setListaPortfolio] = useState([{
+        "id_portfolio": 1,
+        "imagem": "/assets/images/projetos-notaveis-2.png",
+        "titulo": "Getulio Vargas",
+        "descricao": "TEXT",
+        "data_realizacao": "2024-03-04"
+    },
+    {
+        "id_portfolio": 2,
+        "imagem": "/assets/images/projetos-notaveis-2.png",
+        "titulo": "Getulio Vargas",
+        "descricao": "TEXT",
+        "data_realizacao": "2024-03-04"
+    },
+    {
+        "id_portfolio": 3,
+        "imagem": "/assets/images/projetos-notaveis-2.png",
+        "titulo": "Getulio Vargas",
+        "descricao": "TEXT",
+        "data_realizacao": "2024-03-04"
+    },
+    {
+        "id_portfolio": 3,
+        "imagem": "/assets/images/projetos-notaveis-2.png",
+        "titulo": "Getulio Vargas",
+        "descricao": "TEXT",
+        "data_realizacao": "2024-03-04"
+    },
+    {
+        "id_portfolio": 3,
+        "imagem": "/assets/images/projetos-notaveis-2.png",
+        "titulo": "Getulio Vargas",
+        "descricao": "TEXT",
+        "data_realizacao": "2024-03-04"
+    }
+]);
+
+    const [atualizarListaPortfolio, setAtualizarListaPortfolio] = useState(false); // Estado para controlar atualização
+
+    useEffect(() => {
+        buscarPortfolio();
+    }, []); // Dependendo de atualizarLista
+
+    useEffect(() => {
+        // Verifica se o estado de atualização foi passado
+        if (location.state && location.state.refresh) {
+            setAtualizarListaPortfolio(true); // Atualiza a lista
+        }
+    }, [location.state]);
+
+    async function buscarPortfolio() {
+        let resp = await axios.get('http://localhost:3010/portfolio');
+        setListaPortfolio(resp.data);
+        setAtualizarListaPortfolio(false); // Reseta a flag de atualização
+    }
+
+
+
+      
     return (
         <div id='sobre' className='pagina-home'>
             <Cabecalho isAdmin={false} />
@@ -91,7 +160,7 @@ export default function Home() {
                                 <b>Universidade Estadual Paulista</b>
                             </p>
 
-                            <img src='/assets/images/circulo.svg' alt='circulo'/>
+                            <img src='/assets/images/circulo.svg' alt='circulo' />
 
                             <p className='formacoes-item-texto'>
                                 <b>2024</b>
@@ -111,9 +180,10 @@ export default function Home() {
                     </p>
                 </div>
 
+
                 <div className='carrossel'>
                     <div className='carrossel-cartao'>
-                        <img className='carrossel-cartao-imagem' src='/assets/images/carrossel-experiencias-1.png' alt='experiencia'/>
+                        <img className='carrossel-cartao-imagem' src='/assets/images/carrossel-experiencias-1.png' alt='experiencia' />
                         <p className='carrossel-cartao-descricao'> No Equador, colaborei em um projeto de revitalização urbana, onde explorei a fusão de tradições locais com design contemporâneo, criando espaços que refletiam a identidade cultural da comunidade. </p>
                     </div>
 
@@ -123,7 +193,7 @@ export default function Home() {
                     </div>
 
                     <div className='carrossel-cartao'>
-                        <img className='carrosel-cartao-imagem' src='/assets/images/carrossel-experiencias-3.png' alt='experiencia'/>
+                        <img className='carrosel-cartao-imagem' src='/assets/images/carrossel-experiencias-3.png' alt='experiencia' />
                         <p className='carrossel-cartao-descricao'> Na Itália, mergulhei na rica herança do design, contribuindo para uma marca de moda renomada. A experiência de trabalhar ao lado de mestres artesãos me inspirou a valorizar a estética e a funcionalidade, elevando cada projeto a uma forma de arte. </p>
                     </div>
 
@@ -135,7 +205,8 @@ export default function Home() {
 
             <section id='servicos' className='quarta-secao-projetos-notaveis'>
                 <h1> Projetos Notáveis </h1>
-                <div className='grid-projetos'>
+                <Carrossel slides={listaPortfolio}/>
+                {/* <div className='grid-projetos'>
                     <div className='grid-projetos-cartao'>
                         <img src='/assets/images/projetos-notaveis-1.png' alt='projeto' />
                     </div>
@@ -152,7 +223,7 @@ export default function Home() {
                         <img src='/assets/images/projetos-notaveis-4.png' alt='projeto' />
                     </div>
                 </div>
-                <p> Ver mais...</p>
+                <p> Ver mais...</p> */}
             </section>
 
 
@@ -216,7 +287,7 @@ export default function Home() {
                 </div>
                 <div className='grid-ferramentas'>
                     <div className='grid-ferramentas-ferramenta'>
-                        <img src='assets/images/ferramentas-illustrator.png' alt='Adobe Illustrator'  />
+                        <img src='assets/images/ferramentas-illustrator.png' alt='Adobe Illustrator' />
                         <h2> Adobe Illustrator </h2>
                         <p> Design Gráfico </p>
                     </div>
