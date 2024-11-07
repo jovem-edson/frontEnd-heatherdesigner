@@ -1,30 +1,31 @@
 .pagina-home-admin {
-    padding-top: 100px;  
+    padding-top: 100px;
     background-color: #F4EDE4;
     font-family: 'Inter', sans-serif;
+    
 
     .adicionar-portfolio {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 50px 250px;
-            gap: 30px;
-            background-color: #F4EDE4;
-        
-            .titulo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 50px 250px;
+        gap: 30px;
+        background-color: #F4EDE4;
+
+        .titulo {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 5px;
             margin-bottom: 20px;
-    
+
             h1 {
                 font-weight: 900;
                 color: #433D4A;
                 font-size: 50px;
             }
-    
+
             button {
                 border: none;
                 background-color: transparent;
@@ -34,10 +35,10 @@
         }
 
         .portfolio-container {
-            DISPLAY: flex;
-            FLEX-WRAP: wrap;
-            JUSTIFY-CONTENT: center;
-            GAP: 50PX
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
         }
 
         .botao-projetos {
@@ -52,36 +53,31 @@
             cursor: pointer;
             transition: background-color 0.3s;
 
-                    &:hover {
-                        background-color: black;
-                    }
+            &:hover {
+                background-color: black;
+            }
         }
-
-
     }
 
     .agenda-servicos {
         background-color: #CFC5B8;
         display: flex;
         flex-direction: column;
-        // align-items: center;
         padding: 50px;
-    
-    
-    
+
         .titulo {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 5px;
             margin-bottom: 20px;
-    
+
             h1 {
                 font-weight: 900;
                 color: #433D4A;
                 font-size: 50px;
             }
-    
+
             button {
                 border: none;
                 background-color: transparent;
@@ -89,12 +85,12 @@
                 cursor: pointer;
             }
         }
-    
+
         .linha-barra-pesquisa {
             display: flex;
             align-items: center;
             justify-content: center;
-    
+
             .barra-pesquisa {
                 display: flex;
                 justify-content: space-between;
@@ -105,23 +101,19 @@
                 height: 45px;
                 padding: 20px;
             }
-    
+
             img {
                 width: 33px;
                 height: 33px;
             }
-    
-    
         }
-    
-    
+
         .lista-servicos {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 30px;
-    
-    
+
             .lista-servicos-servico {
                 display: flex;
                 justify-content: space-between;
@@ -133,58 +125,76 @@
                 flex-direction: column;
                 gap: 5px;
                 width: 800px;
-    
-    
+
                 .linha {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
                 }
-    
+
                 .servico-botoes {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     margin-top: 30px;
-    
+
                     .data-entrega {
                         font-weight: 700;
                         font-size: 25px;
                     }
-                    
+
                     .botoes {
                         display: flex;
                         gap: 10px;
-    
-                    
-                    img {
-                        width: 60px;
-                        cursor: pointer;
+
+                        img {
+                            width: 60px;
+                            cursor: pointer;
+                        }
                     }
                 }
+            }
+
+            .titulo-servico {
+                font-size: 30px;
+            }
+
+            .status-servico {
+                font-weight: 700;
+            }
+
+            .cliente {
+                font-size: 20px;
+            }
+
+            .tag-tarefa {
+                font-size: 15px;
+            }
+        }
+
+        .botao-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 30px;
+
+            .botao-servicos {
+                background-color: #433D4A;
+                width: 130px;
+                height: 50px;
+                color: white;
+                border-radius: 10px;
+                border: none;
+                font-family: 'Inter', sans-serif;
+                font-size: 24px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: black;
                 }
             }
-    
-                .titulo-servico {
-                    font-size: 30px;
-                }
-    
-                .status-servico {
-                    font-weight: 700;
-                }
-    
-                .cliente {
-                    font-size: 20px;
-                }
-    
-                .tag-tarefa {
-                    font-size: 15px;
-                }
-    
-               
-            
-    
-            
         }
     }
 
@@ -192,17 +202,89 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        
+
+        .titulo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 20px;
+            margin-top: 30px;
+
+            h1 {
+                font-weight: 900;
+                color: #433D4A;
+                font-size: 50px;
+            }
+        }
+
+        .linha-barra-pesquisa {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .barra-pesquisa {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #FFF;
+                width: 60%;
+                border-radius: 45px;
+                height: 45px;
+                padding: 20px;
+            }
+
+            img {
+                width: 33px;
+                height: 33px;
+            }
+        }
 
         .lista-mensagens {
             display: flex;
             flex-direction: column;
-            gap: 30pc;
+            align-items: center;
+            gap: 30px;
+            margin: 30px;
+
+            .lista-mensagens-mensagem {
+                display: flex;
+                justify-content: space-between;
+                background-color: #CFC5B8;
+                border-radius: 20px;
+                margin-top: 24px;
+                padding: 20px;
+                box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.20);
+                flex-direction: column;
+                gap: 5px;
+                width: 800px;
+            }
         }
 
-        .lista-mensagens-mensagem {
+        .botao-container {
             display: flex;
-            justify-content: space-between;
-        }
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 0px 0px 30px 0px;
 
+            .botao-mensagem {
+                background-color: #433D4A;
+                width: 130px;
+                height: 50px;
+                color: white;
+                border-radius: 10px;
+                border: none;
+                font-family: 'Inter', sans-serif;
+                font-size: 24px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: black;
+                }
+            }
+        }
     }
 }

@@ -74,6 +74,34 @@ export default function AdicionarPortfolio() {
         }
 
 
+    } async function salvar() {
+
+        let body = {
+            'imagem': imagemUrl,
+            'titulo': titulo,
+            'descricao': descricao,
+            'dataRealizacao': dataRealizacao
+        }
+
+        console.log(body)
+
+
+        let token = localStorage.getItem('TOKEN');
+
+        if (id == undefined) {
+            let resp = await axios.post('http://localhost:3010/portfolio', body, { headers: { 'x-access-token': token } });
+            // alert(`Registro de ID ${resp.data.novoId} adicionado`);
+            navigate('/admin', { state: { refresh: true } });
+
+        }
+        else {
+            let resp = await axios.put('http://localhost:3010/portfolio/' + id, body, { headers: { 'x-access-token': token } });
+            // alert(`Registro de ID ${id} alterado`);
+            navigate('/admin', { state: { refresh: true } });
+
+        }
+
+
     }
 
     const inserirImagem = () => {
