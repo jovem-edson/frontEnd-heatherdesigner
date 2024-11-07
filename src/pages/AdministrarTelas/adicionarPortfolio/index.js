@@ -1,5 +1,6 @@
 import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
+import { API_URL } from '../../../api/constantes';
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -35,7 +36,7 @@ export default function AdicionarPortfolio() {
     async function buscarPorId() {
         let token = localStorage.getItem('TOKEN');
 
-        let resp = await axios.get('http://localhost:3010/portfolio/' + id, {
+        let resp = await axios.get(`${API_URL}/portfolio/${id}`, {
             headers: { 'x-access-token': token }
         });
 
@@ -61,13 +62,13 @@ export default function AdicionarPortfolio() {
         let token = localStorage.getItem('TOKEN');
 
         if (id == undefined) {
-            let resp = await axios.post('http://localhost:3010/portfolio', body, { headers: { 'x-access-token': token } });
+            let resp = await axios.post(`${API_URL}/portfolio`, body, { headers: { 'x-access-token': token } });
             // alert(`Registro de ID ${resp.data.novoId} adicionado`);
             navigate('/admin', { state: { refresh: true } });
 
         }
         else {
-            let resp = await axios.put('http://localhost:3010/portfolio/' + id, body, { headers: { 'x-access-token': token } });
+            let resp = await axios.put(`${API_URL}/portfolio/` + id, body, { headers: { 'x-access-token': token } });
             // alert(`Registro de ID ${id} alterado`);
             navigate('/admin', { state: { refresh: true } });
 
@@ -89,13 +90,13 @@ export default function AdicionarPortfolio() {
         let token = localStorage.getItem('TOKEN');
 
         if (id == undefined) {
-            let resp = await axios.post('http://localhost:3010/portfolio', body, { headers: { 'x-access-token': token } });
+            let resp = await axios.post(`${API_URL}/portfolio`, body, { headers: { 'x-access-token': token } });
             // alert(`Registro de ID ${resp.data.novoId} adicionado`);
             navigate('/admin', { state: { refresh: true } });
 
         }
         else {
-            let resp = await axios.put('http://localhost:3010/portfolio/' + id, body, { headers: { 'x-access-token': token } });
+            let resp = await axios.put(`${API_URL}/portfolio/${id}`, body, { headers: { 'x-access-token': token } });
             // alert(`Registro de ID ${id} alterado`);
             navigate('/admin', { state: { refresh: true } });
 

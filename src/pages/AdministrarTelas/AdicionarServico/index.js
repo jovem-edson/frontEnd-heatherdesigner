@@ -27,7 +27,7 @@ export default function AdicionarServico() {
     async function buscarPorId() {
         let token = localStorage.getItem('TOKEN');
 
-        let resp = await axios.get(`http://52.233.83.184:3010/servico/` + id, {
+        let resp = await axios.get(`${API_URL}/servico/` + id, {
             headers: { 'x-access-token': token }
         });
 

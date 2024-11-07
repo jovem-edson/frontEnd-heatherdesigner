@@ -46,14 +46,14 @@ export default function HomeAdmin() {
 
     // Buscar dados dos serviços
     async function buscarServicos() {
-        let resp = await axios.get(`http://52.233.83.184:3010/servico`);
+        let resp = await axios.get(`${API_URL}/servico`);
         setLista(resp.data);
         setAtualizarLista(false);
     }
 
     // Buscar dados do portfólio
     async function buscarPortfolio() {
-        let resp = await axios.get('http://localhost:3010/portfolio');
+        let resp = await axios.get(`${API_URL}/portfolio`);
         setListaPortfolio(resp.data);
         setAtualizarListaPortfolio(false);
     }
@@ -74,7 +74,7 @@ export default function HomeAdmin() {
 
     // Função para excluir portfólio
     async function excluirPortfolio(id) {
-        await axios.delete(`http://localhost:3010/portfolio/${id}`);
+        await axios.delete(`${API_URL}/portfolio/${id}`);
         alert(`Registro de ${id} excluído`);
         await buscarPortfolio();
     }
