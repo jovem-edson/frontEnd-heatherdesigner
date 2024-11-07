@@ -46,7 +46,7 @@ export default function HomeAdmin() {
 
     // Buscar dados dos serviços
     async function buscarServicos() {
-        let resp = await axios.get(`${API_URL}/servico`);
+        let resp = await axios.get(`http://52.233.83.184:3010/servico`);
         setLista(resp.data);
         setAtualizarLista(false);
     }
@@ -67,7 +67,7 @@ export default function HomeAdmin() {
 
     // Função para excluir serviço
     async function excluirServico(id) {
-        await axios.delete(`${API_URL}/servico/${id}`);
+        await axios.delete(`http://52.233.83.184:3010/servico/${id}`);
         alert(`Registro de ${id} excluído`);
         await buscarServicos();
     }
