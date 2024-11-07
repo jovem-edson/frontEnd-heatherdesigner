@@ -70,7 +70,7 @@ export default function AdicionarServico() {
 
     }
 
-   
+
 
     return (
         <div className='pagina-adicionar-servico' isAdmin={true}>
@@ -80,10 +80,10 @@ export default function AdicionarServico() {
 
                 <span className='linha-voltar'>
                     <div className='spacer'>
-                    <button onClick={() => navigate('/admin')} className='botao-criar'>
-                    <img src='/assets/images/seta-voltar.png' className='botao-voltar' alt='voltar' />
-                    <h2> Voltar </h2>
-                    </button>
+                        <button onClick={() => navigate('/admin')} className='botao-criar'>
+                            <img src='/assets/images/seta-voltar.png' className='botao-voltar' alt='voltar' />
+                            <h2> Voltar </h2>
+                        </button>
                     </div>
                     <h1>{id == undefined ? 'Adicionar Serviço' : 'Editar Serviço'}</h1>
                     <div className='spacer'>
@@ -91,20 +91,23 @@ export default function AdicionarServico() {
                 </span>
 
 
-                <form>
+                <form onSubmit={e => {
+                    e.preventDefault(); // Impede o envio padrão para que você possa controlar a lógica de salvar
+                    salvar(); // Chama a função de salvar
+                }}>
                     <span className='linha'>
                         <div className='campo-input'>
                             <label className='legenda-input' for='titulo-servico'>
                                 Título do Serviço
                             </label>
-                            <input type="text" value={titulo} onChange={e => setTitulo(e.target.value)} id="servico" name="titulo-servico" placeholder="Insira o título do projeto..." />
+                            <input required type="text" value={titulo} onChange={e => setTitulo(e.target.value)} id="servico" name="titulo-servico" placeholder="Insira o título do projeto..." />
                         </div>
 
                         <div className='campo-input'>
                             <label className='legenda-input' for='data-entrega'>
                                 Data de Entrega
                             </label>
-                            <input type="date" value={dataEntrega} onChange={e => setDataEntrega(e.target.value)} id="data-entrega" name="data-entrega" placeholder="Insira a Data de Entrega" />
+                            <input required type="date" value={dataEntrega} onChange={e => setDataEntrega(e.target.value)} id="data-entrega" name="data-entrega" placeholder="Insira a Data de Entrega" />
                         </div>
 
                     </span>
@@ -114,7 +117,7 @@ export default function AdicionarServico() {
                             <label className='legenda-input' for='nome-cliente'>
                                 Nome do Cliente
                             </label>
-                            <input type="text" value={nomeCliente} onChange={e => setNomeCliente(e.target.value)} id="nome" name="nome-cliente" placeholder="Insira o título do projeto..." />
+                            <input required type="text" value={nomeCliente} onChange={e => setNomeCliente(e.target.value)} id="nome" name="nome-cliente" placeholder="Insira o título do projeto..." />
                         </div>
 
                         <div className='campo-input'>
@@ -134,11 +137,10 @@ export default function AdicionarServico() {
                         </div>
                     </span>
 
-                    <Link to="/admin">
 
-                    <button className='botao-salvar' onClick={salvar}> {id == undefined ? 'Salvar' : 'Alterar'} </button>
-
-                    </Link>
+                        <button type="submit" className='botao-salvar'>
+                            {id == undefined ? 'Salvar' : 'Alterar'}
+                        </button>
                 </form>
             </div>
         </div>
