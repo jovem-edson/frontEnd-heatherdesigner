@@ -45,7 +45,7 @@ export default function HomeAdmin() {
 
     // Buscar dados dos serviços
     async function buscarServicos() {
-        let resp = await axios.get('http://localhost:3010/servico');
+        let resp = await axios.get(`${API_URL}/servico`);
         setLista(resp.data);
         setAtualizarLista(false);
     }

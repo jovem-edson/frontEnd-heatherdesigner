@@ -4,7 +4,7 @@ import Cabecalho from '../../../components/cabecalho';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams, Link } from 'react-router-dom';
-
+import { API_URL } from '../../../api/constantes';
 
 export default function AdicionarServico() {
     const [titulo, setTitulo] = useState('');
