@@ -1,6 +1,7 @@
 import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import Card from '../../../components/cardPortfolio';
+import { API_URL } from '../../../api/constantes';
 
 import axios from 'axios';
 
