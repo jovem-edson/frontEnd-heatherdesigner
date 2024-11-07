@@ -62,7 +62,7 @@ export default function Carrossel({slides}) {
             <div className='card-informacoes'>
                 <h3>{item.titulo}</h3>
                 <p>{item.descricao}</p>
-                <p className='data-realizacao'>Realizado em: {item.data_realizacao}</p>
+                <p className='data-realizacao'>Realizado em: {new Date(item.data_realizacao).toLocaleDateString()}</p>
             </div>
 
           
