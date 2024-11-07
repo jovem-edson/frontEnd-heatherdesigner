@@ -14,7 +14,7 @@ export default function Rodape() {
                         </a>
 
                         <a className='instagram' href='../../pages/Home/index.js' role='button' tabIndex='0'>
-                            <img src='/assets/images/Rodape/instagram.png' alt='Instagram' />
+                            <img src='/assets/images/Rodape/Instagram.png' alt='Instagram' />
                         </a>
 
                         <a className='linkedin' href='../../pages/Home/index.js' role='button' tabIndex='0'>
@@ -41,7 +41,7 @@ export default function Rodape() {
                     <ul>
                         <h3>Idioma</h3>
                         <li>
-                            <img src='/assets/images/Rodape/idioma.png' alt='Idioma' />
+                            <img src='/assets/images/Rodape/Idioma.png' alt='Idioma' />
                             <a href='.' role='button' tabIndex='0'>Português - Brasil</a>
                         </li>
                     </ul>
