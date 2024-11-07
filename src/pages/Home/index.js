@@ -8,6 +8,7 @@ import axios from 'axios';
 import Cabecalho from '../../components/cabecalho'
 import Rodape from '../../components/rodape'
 import Carrossel from '../../components/Carrossel'
+import { API_URL } from '../../api/constantes';
 
 
 export default function Home() {
@@ -65,7 +66,7 @@ export default function Home() {
     }, [location.state]);
 
     async function buscarPortfolio() {
-        let resp = await axios.get('http://localhost:3010/portfolio');
+        let resp = await axios.get(`${API_URL}/portfolio`);
         setListaPortfolio(resp.data);
         setAtualizarListaPortfolio(false); // Reseta a flag de atualização
     }
