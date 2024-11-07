@@ -55,13 +55,13 @@ export default function AdicionarServico() {
         let token = localStorage.getItem('TOKEN');
 
         if (id == undefined) {
-            let resp = await axios.post(`http://52.233.83.184:3010/servico`, body, { headers: { 'x-access-token': token } });
+            let resp = await axios.post(`${API_URL}/servico`, body, { headers: { 'x-access-token': token } });
             // alert(`Registro de ID ${resp.data.novoId} adicionado`);
             navigate('/admin', { state: { refresh: true } });
 
         }
         else {
-            let resp = await axios.put(`http://52.233.83.184:3010/servico/` + id, body, { headers: { 'x-access-token': token } });
+            let resp = await axios.put(`${API_URL}/servico/` + id, body, { headers: { 'x-access-token': token } });
             // alert(`Registro de ID ${id} alterado`);
             navigate('/admin', { state: { refresh: true } });
 

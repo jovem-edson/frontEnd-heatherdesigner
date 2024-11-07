@@ -67,7 +67,7 @@ export default function HomeAdmin() {
 
     // Função para excluir serviço
     async function excluirServico(id) {
-        await axios.delete(`http://52.233.83.184:3010/servico/${id}`);
+        await axios.delete(`${API_URL}/servico/${id}`);
         alert(`Registro de ${id} excluído`);
         await buscarServicos();
     }
