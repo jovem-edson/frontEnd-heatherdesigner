@@ -3,19 +3,21 @@ import axios from 'axios'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
+import { Toaster, toast } from 'react-hot-toast';
 import { API_URL } from '../../api/constantes';
 
-export default function Logar(){
+export default function Logar() {
 
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
 
     const navigate = useNavigate();
-  
+
     const handleSubmit = event => {
-      event.preventDefault();
-  
-      console.log('form submitted ✅');
+        event.preventDefault();
+
+        console.log('form submitted ✅');
     };
 
 
@@ -34,11 +36,22 @@ export default function Logar(){
 
         }
         catch (err) {
-            alert(err.response.data.erro)
+            toast.error(err.response?.data?.erro, {
+                style: {
+                    border: '1px solid #FF0000', // Cor da borda vermelha para erro
+                    padding: '16px',
+                    color: '#FF0000', // Cor do texto em vermelho
+                },
+                iconTheme: {
+                    primary: '#FF0000', // Cor do ícone (vermelho)
+                    secondary: '#FFFAEE', // Cor de fundo suave
+                }
+            });
         }
+        
     }
 
-    return(
+    return (
         <div className='secaoLogin'>
             <div className='secaoLogin-container'>
                 <div className='container-foto'>
@@ -47,8 +60,8 @@ export default function Logar(){
                 <div className='container-formulario'>
                     <div className='formulario-voltar'>
                         <button className='voltar' onClick={() => navigate('/')}>
-                        <img src="/assets/images/seta-voltar.png" alt="voltar"/>
-                                        Voltar
+                            <img src="/assets/images/seta-voltar.png" alt="voltar" />
+                            Voltar
                         </button>
                     </div>
 
@@ -58,34 +71,34 @@ export default function Logar(){
                                 <div className='titulo-formulario'>
                                     <h2>Login do Administrador</h2>
                                     <p>Se você é um administrador, pode fazer login com seu endereço de e-mail e senha.</p>
-                                    <hr/>
+                                    <hr />
                                 </div>
 
-                                
+
 
                                 <div>
                                     <label>Endereço de Email
-                                    <input type="text" value={email} onChange={(e) => {
-                        setEmail(e.target.value)
-                    } }/>
+                                        <input type="text" value={email} onChange={(e) => {
+                                            setEmail(e.target.value)
+                                        }} />
                                     </label>
                                 </div>
 
                                 <div>
                                     <label>Senha
-                                    <input type="password" value={senha} onChange={(e) => setSenha(e.target.value)} />
+                                        <input type="password" value={senha} onChange={(e) => setSenha(e.target.value)} />
                                     </label>
 
                                     <div className='alterarSenha'>
-                                    <p>Esqueceu a senha? <a>Recuperar a senha</a></p>
-                                </div>
+                                        <p>Esqueceu a senha? <a>Recuperar a senha</a></p>
+                                    </div>
                                 </div>
 
-                                
+
 
                                 <div>
                                     <button onClick={logar} type='submit'>Login</button>
-                                    
+
                                 </div>
 
 
@@ -95,6 +108,10 @@ export default function Logar(){
                     </div>
                 </div>
             </div>
+            <Toaster
+                position="top-right"
+                reverseOrder={false}
+            />
         </div>
     )
 }

@@ -6,6 +6,9 @@ import axios from 'axios';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { API_URL } from '../../../api/constantes';
 
+import { Toaster, toast } from 'react-hot-toast';
+
+
 export default function AdicionarServico() {
     const [titulo, setTitulo] = useState('');
     const [dataEntrega, setDataEntrega] = useState('');
@@ -57,12 +60,35 @@ export default function AdicionarServico() {
         if (id == undefined) {
             let resp = await axios.post(`${API_URL}/servico`, body, { headers: { 'x-access-token': token } });
             // alert(`Registro de ID ${resp.data.novoId} adicionado`);
+            toast.success(`Serviço N° ${resp.data.novoId} Adicionado com sucesso!`, {
+                style: {
+                    border: '1px solid #28a745', // Cor verde para borda
+                    padding: '16px',
+                    color: 'black', // Cor verde para o texto
+                },
+                iconTheme: {
+                    primary: '#28a745', // Cor verde para o ícone
+                    secondary: '#D4EDDA', // Cor de fundo suave em verde claro
+                },
+            });
+            
             navigate('/admin', { state: { refresh: true } });
 
         }
         else {
             let resp = await axios.put(`${API_URL}/servico/` + id, body, { headers: { 'x-access-token': token } });
             // alert(`Registro de ID ${id} alterado`);
+            toast.success(`Serviço N° ${id} Alterado com sucesso!!`, {
+                style: {
+                    border: '1px solid #28a745', // Cor verde para borda
+                    padding: '16px',
+                    color: 'black', // Cor verde para o texto
+                },
+                iconTheme: {
+                    primary: '#28a745', // Cor verde para o ícone
+                    secondary: '#D4EDDA', // Cor de fundo suave em verde claro
+                },
+            });
             navigate('/admin', { state: { refresh: true } });
 
         }
@@ -143,6 +169,10 @@ export default function AdicionarServico() {
                         </button>
                 </form>
             </div>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
         </div>
     )
 }

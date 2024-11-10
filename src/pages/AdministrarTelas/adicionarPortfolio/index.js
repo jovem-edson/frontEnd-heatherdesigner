@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 
+import { Toaster, toast } from 'react-hot-toast';
+
 /*
 id_portfolio INT PRIMARY KEY AUTO_INCREMENT,
     imagem VARCHAR(255),
@@ -47,6 +49,35 @@ export default function AdicionarPortfolio() {
     }
 
 
+    // async function salvar() {
+
+    //     let body = {
+    //         'imagem': imagemUrl,
+    //         'titulo': titulo,
+    //         'descricao': descricao,
+    //         'dataRealizacao': dataRealizacao
+    //     }
+
+    //     console.log(body)
+
+
+    //     let token = localStorage.getItem('TOKEN');
+
+    //     if (id == undefined) {
+    //         let resp = await axios.post(`${API_URL}/portfolio`, body, { headers: { 'x-access-token': token } });
+    //         // alert(`Registro de ID ${resp.data.novoId} adicionado`);
+    //         navigate('/admin', { state: { refresh: true } });
+
+    //     }
+    //     else {
+    //         let resp = await axios.put(`${API_URL}/portfolio/` + id, body, { headers: { 'x-access-token': token } });
+    //         // alert(`Registro de ID ${id} alterado`);
+    //         navigate('/admin', { state: { refresh: true } });
+
+    //     }
+
+
+    // } 
     async function salvar() {
 
         let body = {
@@ -63,41 +94,37 @@ export default function AdicionarPortfolio() {
 
         if (id == undefined) {
             let resp = await axios.post(`${API_URL}/portfolio`, body, { headers: { 'x-access-token': token } });
-            // alert(`Registro de ID ${resp.data.novoId} adicionado`);
-            navigate('/admin', { state: { refresh: true } });
-
-        }
-        else {
-            let resp = await axios.put(`${API_URL}/portfolio/` + id, body, { headers: { 'x-access-token': token } });
-            // alert(`Registro de ID ${id} alterado`);
-            navigate('/admin', { state: { refresh: true } });
-
-        }
-
-
-    } async function salvar() {
-
-        let body = {
-            'imagem': imagemUrl,
-            'titulo': titulo,
-            'descricao': descricao,
-            'dataRealizacao': dataRealizacao
-        }
-
-        console.log(body)
-
-
-        let token = localStorage.getItem('TOKEN');
-
-        if (id == undefined) {
-            let resp = await axios.post(`${API_URL}/portfolio`, body, { headers: { 'x-access-token': token } });
-            // alert(`Registro de ID ${resp.data.novoId} adicionado`);
+           // toast.success(`Registro de ID ${resp.data.novoId} adicionado`);
+            toast.success(`Projeto N° ${resp.data.novoId} Adicionado com sucesso!`, {
+                style: {
+                    border: '1px solid #28a745', // Cor verde para borda
+                    padding: '16px',
+                    color: 'black', // Cor verde para o texto
+                },
+                iconTheme: {
+                    primary: '#28a745', // Cor verde para o ícone
+                    secondary: '#D4EDDA', // Cor de fundo suave em verde claro
+                },
+            });
+            
+    
             navigate('/admin', { state: { refresh: true } });
 
         }
         else {
             let resp = await axios.put(`${API_URL}/portfolio/${id}`, body, { headers: { 'x-access-token': token } });
             // alert(`Registro de ID ${id} alterado`);
+            toast.success(`Projeto N° ${id} Alterado com sucesso!!`, {
+                style: {
+                    border: '1px solid #28a745', // Cor verde para borda
+                    padding: '16px',
+                    color: 'black', // Cor verde para o texto
+                },
+                iconTheme: {
+                    primary: '#28a745', // Cor verde para o ícone
+                    secondary: '#D4EDDA', // Cor de fundo suave em verde claro
+                },
+            });
             navigate('/admin', { state: { refresh: true } });
 
         }
@@ -187,6 +214,10 @@ export default function AdicionarPortfolio() {
                 </div>
                 </form>
             </div>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
         </div>
     )
 }

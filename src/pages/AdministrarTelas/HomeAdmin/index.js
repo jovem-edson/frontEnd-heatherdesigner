@@ -2,6 +2,8 @@ import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import Card from '../../../components/cardPortfolio';
 import { API_URL } from '../../../api/constantes';
+import { Toaster, toast } from 'react-hot-toast';
+
 
 import axios from 'axios';
 
@@ -10,7 +12,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function HomeAdmin() {
     const navigate = useNavigate();
-    const location = useLocation(); 
+    const location = useLocation();
 
     // Lógica para o Serviço
     const [lista, setLista] = useState([]);
@@ -26,6 +28,8 @@ export default function HomeAdmin() {
     const [listaMensagem, setListaMensagem] = useState([]);
     const [visibleCountMensagem, setVisibleCountMensagem] = useState(4); // Número de projetos visíveis
     const [atualizarListaMensagem, setAtualizarListaMensagem] = useState(false);
+
+    const token = localStorage.getItem('TOKEN');
 
     useEffect(() => {
         if (!localStorage.getItem('TOKEN')) {
@@ -46,36 +50,64 @@ export default function HomeAdmin() {
 
     // Buscar dados dos serviços
     async function buscarServicos() {
-        let resp = await axios.get(`${API_URL}/servico`);
+        let resp = await axios.get(`${API_URL}/servico`, {
+            headers: { 'x-access-token': token }
+        });
         setLista(resp.data);
         setAtualizarLista(false);
     }
 
     // Buscar dados do portfólio
     async function buscarPortfolio() {
-        let resp = await axios.get(`${API_URL}/portfolio`);
+        let resp = await axios.get(`${API_URL}/portfolio`, {
+            headers: { 'x-access-token': token }
+        });
         setListaPortfolio(resp.data);
         setAtualizarListaPortfolio(false);
     }
-
     // Buscar mensagens
     async function buscarMensagens() {
-        let resp = await axios.get('http://localhost:3010/mensagem');
+        let resp = await axios.get('http://localhost:3010/mensagem', {
+            headers: { 'x-access-token': token }
+        });
         setListaMensagem(resp.data);
         setAtualizarListaMensagem(false);
     }
-
     // Função para excluir serviço
     async function excluirServico(id) {
-        await axios.delete(`${API_URL}/servico/${id}`);
-        alert(`Registro de ${id} excluído`);
+        await axios.delete(`${API_URL}/servico/${id}`, {
+            headers: { 'x-access-token': token }
+        });
+        toast.success(`Serviço N° ${id} excluído com sucesso!`, {
+            style: {
+                border: '1px solid #28a745',
+                padding: '16px',
+                color: 'black',
+            },
+            iconTheme: {
+                primary: '#28a745',
+                secondary: '#D4EDDA',
+            },
+        });
         await buscarServicos();
     }
 
     // Função para excluir portfólio
     async function excluirPortfolio(id) {
-        await axios.delete(`${API_URL}/portfolio/${id}`);
-        alert(`Registro de ${id} excluído`);
+        await axios.delete(`${API_URL}/portfolio/${id}`, {
+            headers: { 'x-access-token': token }
+        });
+        toast.success(`Projeto N° ${id} excluído com sucesso!`, {
+            style: {
+                border: '1px solid #28a745',
+                padding: '16px',
+                color: 'black',
+            },
+            iconTheme: {
+                primary: '#28a745',
+                secondary: '#D4EDDA',
+            },
+        });
         await buscarPortfolio();
     }
 
@@ -152,7 +184,6 @@ export default function HomeAdmin() {
                         <p>Insira um nome...</p>
                         <img src="/assets/images/lupa.png" alt="lupa" />
                     </div>
-                    <img src="/assets/images/filtro.png" alt="filtrar" />
                 </div>
 
                 <div className="lista-servicos">
@@ -208,7 +239,6 @@ export default function HomeAdmin() {
                         <p>Insira um nome...</p>
                         <img src="/assets/images/lupa.png" alt="lupa" />
                     </div>
-                    <img src="/assets/images/filtro.png" alt="filtrar" />
                 </div>
 
                 <div className="lista-mensagens">
@@ -240,6 +270,17 @@ export default function HomeAdmin() {
                 )}
             </section>
 
+            {/* Seção de Faturamento */}
+            <section id="faturamento" className="faturamento-container">
+                <span className="titulo">
+                    <h1>Faturamento</h1>
+                </span>
+
+            </section>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
         </div>
     );
 }

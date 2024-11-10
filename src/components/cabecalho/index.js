@@ -8,6 +8,7 @@ export default function Cabecalho({ isAdmin }) {
         localStorage.removeItem('TOKEN');
         navigate('/');
     }
+    
 
     return (
         <header className='cabecalho'>
@@ -26,6 +27,7 @@ export default function Cabecalho({ isAdmin }) {
                             <a href='#portfolio' className='cabecalho-nav-item-link'>Portfólio</a>
                             <a href='#agenda' className='cabecalho-nav-item-link'>Agenda</a>
                             <a href='#mensagens' className='cabecalho-nav-item-link'>Mensagens</a>
+                            <a href='#faturamento' className='cabecalho-nav-item-link'>Faturamento</a>
                         </>
                     ) : (
                         <>
