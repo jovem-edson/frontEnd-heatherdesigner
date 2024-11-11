@@ -67,9 +67,14 @@ export default function Home() {
 
     async function buscarPortfolio() {
         let resp = await axios.get(`${API_URL}/portfolio`);
-        setListaPortfolio(resp.data);
+        const portfoliosComImagem = resp.data.map(projeto => ({
+            ...projeto,
+            imagem: projeto.imagem ? `${API_URL}/${projeto.imagem}` : '/assets/images/placeholder.svg'
+        }));
+        setListaPortfolio(portfoliosComImagem);
         setAtualizarListaPortfolio(false); // Reseta a flag de atualização
     }
+ 
 
 
 
