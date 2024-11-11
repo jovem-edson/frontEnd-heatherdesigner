@@ -62,9 +62,14 @@ export default function HomeAdmin() {
         let resp = await axios.get(`${API_URL}/portfolio`, {
             headers: { 'x-access-token': token }
         });
-        setListaPortfolio(resp.data);
+        const portfoliosComImagem = resp.data.map(projeto => ({
+            ...projeto,
+            imagem: projeto.imagem ? `${API_URL}/${projeto.imagem}` : '/assets/images/placeholder.svg'
+        }));
+        setListaPortfolio(portfoliosComImagem);
         setAtualizarListaPortfolio(false);
     }
+
     // Buscar mensagens
     async function buscarMensagens() {
         let resp = await axios.get('http://localhost:3010/mensagem', {
