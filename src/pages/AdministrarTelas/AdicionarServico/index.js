@@ -13,6 +13,7 @@ export default function AdicionarServico() {
     const [titulo, setTitulo] = useState('');
     const [dataEntrega, setDataEntrega] = useState('');
     const [nomeCliente, setNomeCliente] = useState('');
+    const [preco, setPreco] = useState(0);
     const [status, setStatus] = useState('Não Iniciado');
     const [tag, setTag] = useState('Design Gráfico');
 
@@ -36,6 +37,7 @@ export default function AdicionarServico() {
 
         setTitulo(resp.data.titulo);
         setNomeCliente(resp.data.nomeCliente);
+        setPreco(resp.data.preco);
         setDataEntrega(resp.data.dataEntrega.substr(0, 10));
         setStatus(resp.data.status);
         setTag(resp.data.tag);
@@ -44,9 +46,38 @@ export default function AdicionarServico() {
 
     async function salvar() {
 
+        if(titulo == "" || nomeCliente == "" || preco < 10 || tag == "" || status == "" || dataEntrega == "") {
+            if(dataEntrega == "") {
+                toast.error('O campo de data de entrega deve ser preenchido.');
+            }
+            
+            if(status == "") {
+                toast.error('O campo de status deve ser preenchido.');
+            }
+            
+            if(tag == "") {
+                toast.error('O campo de tag deve ser preenchido.');
+            }
+            
+            if(preco < 10) {
+                toast.error('O campo de preço deve ser preenchido com um valor maior que 10.');
+            }
+
+            if(nomeCliente == "") {
+                toast.error('O campo de nome do cliente deve ser preenchido.');
+            }
+            
+            if(titulo == "") {
+                toast.error('O campo de título deve ser preenchido.');
+            }
+
+            return
+        } 
+
         let body = {
             'titulo': titulo,
             'nomeCliente': nomeCliente,
+            'preco':preco,
             'tag': tag,
             'status': status,
             'dataEntrega': dataEntrega
@@ -56,6 +87,7 @@ export default function AdicionarServico() {
 
 
         let token = localStorage.getItem('TOKEN');
+        alert(preco)
 
         if (id == undefined) {
             let resp = await axios.post(`${API_URL}/servico`, body, { headers: { 'x-access-token': token } });
@@ -124,37 +156,43 @@ export default function AdicionarServico() {
                     <span className='linha'>
                         <div className='campo-input'>
                             <label className='legenda-input' for='titulo-servico'>
-                                Título do Serviço
+                                Título do Serviço*
                             </label>
-                            <input required type="text" value={titulo} onChange={e => setTitulo(e.target.value)} id="servico" name="titulo-servico" placeholder="Insira o título do projeto..." />
+                            <input type="text" value={titulo} onChange={e => setTitulo(e.target.value)} id="servico" name="titulo-servico" placeholder="Insira o título do projeto..." />
                         </div>
 
                         <div className='campo-input'>
                             <label className='legenda-input' for='data-entrega'>
-                                Data de Entrega
+                                Data de Entrega*
                             </label>
-                            <input required type="date" value={dataEntrega} onChange={e => setDataEntrega(e.target.value)} id="data-entrega" name="data-entrega" placeholder="Insira a Data de Entrega" />
+                            <input type="date" value={dataEntrega} onChange={e => setDataEntrega(e.target.value)} id="data-entrega" name="data-entrega" placeholder="Insira a Data de Entrega" />
                         </div>
 
+                        <div className='campo-input'>
+                            <label className='legenda-input' for='nome-cliente'>
+                                Nome do Cliente*
+                            </label>
+                            <input type="text" value={nomeCliente} onChange={e => setNomeCliente(e.target.value)} id="nome" name="nome-cliente" placeholder="Insira o título do projeto..." />
+                        </div>
                     </span>
 
                     <span className='linha'>
                         <div className='campo-input'>
-                            <label className='legenda-input' for='nome-cliente'>
-                                Nome do Cliente
+                            <label className='legenda-input' for='preco'>
+                                Preço do Serviço (R$)*
                             </label>
-                            <input required type="text" value={nomeCliente} onChange={e => setNomeCliente(e.target.value)} id="nome" name="nome-cliente" placeholder="Insira o título do projeto..." />
+                            <input type="number" max="20000" value={preco} onChange={e => setPreco(e.target.value)} id="preco" name="preco" placeholder="Preço do serviço" />
                         </div>
 
                         <div className='campo-input'>
-                            <label className='legenda-input' for="tag"> Tag da Tarefa:</label>
+                            <label className='legenda-input' for="tag"> Tag da Tarefa*</label>
                             <select id="status" value={tag} onChange={e => setTag(e.target.value)} name="tag">
                                 <option value="Design Gráfico">Design Gráfico</option>
                                 <option value="Design Digital">Design Digital</option>
                             </select></div>
 
                         <div className='campo-input'>
-                            <label className='legenda-input' for="status">Status:</label>
+                            <label className='legenda-input' for="status">Status*</label>
                             <select id="status" value={status} onChange={e => setStatus(e.target.value)} name="status">
                                 <option value="Não Iniciado">Não Iniciado</option>
                                 <option value="Em Andamento">Em Andamento</option>

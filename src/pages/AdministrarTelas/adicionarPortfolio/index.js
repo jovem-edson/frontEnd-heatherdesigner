@@ -24,18 +24,18 @@ export default function AdicionarPortfolio() {
         }
     }, []);
 
-    
+
     async function buscarPorId() {
         let token = localStorage.getItem('TOKEN');
         try {
             let resp = await axios.get(`${API_URL}/portfolio/${id}`, {
                 headers: { 'x-access-token': token }
             });
-    
+
             setTitulo(resp.data.titulo);
             setDescricao(resp.data.descricao);
             setDataRealizacao(resp.data.dataRealizacao.substr(0, 10));
-    
+
             if (resp.data.imagem) {
                 const imagemUrl = `${API_URL}/${resp.data.imagem}`;
                 setImagemUrl(imagemUrl);
@@ -43,15 +43,15 @@ export default function AdicionarPortfolio() {
             } else {
                 setImagemUrl('/assets/images/placeholder.svg');
             }
-    
+
             setImagem(resp.data.imagem);
-    
+
         } catch (error) {
             toast.error('Erro ao buscar projeto: ' + error.message);
         }
     }
-    
-    
+
+
 
     async function uploadImagem(file, projectId) {
         try {
@@ -87,10 +87,33 @@ export default function AdicionarPortfolio() {
             toast.error('Erro ao fazer upload da imagem: ' + error.message);
         }
     }
-    
+
 
     async function salvar() {
         try {
+
+            
+
+            if (titulo == "" || descricao == "" || dataRealizacao == "" || imagem == "") {
+                if (titulo == "") {
+                    toast.error('O campo de título deve ser preenchido.');
+                }
+
+                if (dataRealizacao == "") {
+                    toast.error('O campo de data de entrega deve ser preenchido.')
+                }
+
+                if (descricao == "") {
+                    toast.error('O campo de descrição deve ser preenchido.')
+                }
+
+                if (imagem == "") {
+                  toast.error('Uma foto deve ser adicionada ao projeto.')
+                }
+
+                return
+            }
+
             let token = localStorage.getItem('TOKEN');
             let body = {
                 'imagem': '',
@@ -158,15 +181,15 @@ export default function AdicionarPortfolio() {
                 <form className='formulario'>
                     <div className='container-formulario'>
                         <div>
-                            <label htmlFor='titulo-portfolio'>Título do Projeto</label>
+                            <label htmlFor='titulo-portfolio'>Título do Projeto*</label>
                             <input type="text" value={titulo} onChange={(e) => setTitulo(e.target.value)} placeholder='Insira o título do projeto...' />
                         </div>
                         <div>
-                            <label htmlFor='data-realizacao'>Data de Realização</label>
+                            <label htmlFor='data-realizacao'>Data de Realização*</label>
                             <input type="date" value={dataRealizacao} onChange={(e) => setDataRealizacao(e.target.value)} />
                         </div>
                         <div>
-                            <label htmlFor='descricao'>Descrição do Projeto</label>
+                            <label htmlFor='descricao'>Descrição do Projeto*</label>
                             <textarea value={descricao} onChange={(e) => setDescricao(e.target.value)} placeholder='Insira a descrição do projeto...' />
                         </div>
                         <button type='button' className='botao-salvar' onClick={salvar}>
@@ -174,11 +197,11 @@ export default function AdicionarPortfolio() {
                         </button>
                     </div>
                     <div className='container-imagem'>
-                        <label htmlFor='imagem'>Imagem do Projeto</label>
+                        <label htmlFor='imagem'>Imagem do Projeto*</label>
                         <div
                             className={imagemUrl === '/assets/images/placeholder.svg' ? 'placeholder' : 'placeholder overflow'}
-                           // onClick={inserirImagem}
-                            //style={{ cursor: 'pointer' }}
+                        // onClick={inserirImagem}
+                        //style={{ cursor: 'pointer' }}
                         >
                             <img src={imagemUrl} alt='enviar-imagem' />
                         </div>
@@ -186,7 +209,7 @@ export default function AdicionarPortfolio() {
                             type="file"
                             id="file-input"
                             accept="image/*"
-                           // style={{ display: 'none' }}
+                            // style={{ display: 'none' }}
                             onChange={alterarImagem}
                         />
                     </div>

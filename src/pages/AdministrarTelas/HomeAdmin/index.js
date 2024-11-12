@@ -198,6 +198,7 @@ export default function HomeAdmin() {
                                 <h2 className="titulo-servico">{item.titulo}</h2>
                                 <p className="status-servico">{item.status}</p>
                             </span>
+                            <p className="cliente">Preço: {item.preco}</p>
                             <p className="cliente">Cliente: {item.nomeCliente}</p>
                             <p className="tag-tarefa">Tag: {item.tag}</p>
 
