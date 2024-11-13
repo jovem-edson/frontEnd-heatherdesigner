@@ -419,12 +419,12 @@ export default function Home() {
                         </label>
                         <label for="assunto-mensagem">Assunto*
                             <select id="assuntoMensagem" value={assuntoMensagem} onChange={e => setAssuntoMensagem(e.target.value)} name="assunto-mensagem">
-                                <option>Photoshop</option>
-                                <option>Design Gráfico</option>
-                                <option>UX/UI Design</option>
-                                <option>Design de Aplicativos</option>
-                                <option>Design de Produto</option>
-                                <option> Outros </option>
+                                <option value="Photoshop">Photoshop</option>
+                                <option value="Design Gráfico">Design Gráfico</option>
+                                <option value="UX/UI Design">UX/UI Design</option>
+                                <option value="Design de Aplicativos">Design de Aplicativos</option>
+                                <option value="Design de Produto">Design de Produto</option>
+                                <option value="Outros"> Outros </option>
                             </select>
                         </label>
                         <label for='corpo-mensagem'>Mensagem*

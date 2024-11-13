@@ -259,6 +259,10 @@ export default function HomeAdmin() {
                             </div>
 
                             <div className="mensagem-info">
+                                <p className="mensagem-corpo">Mensagem: {mensagem.corpoMensagem}</p>
+                            </div>
+
+                            <div className="mensagem-info">
                                 <p className="status-servico">{mensagem.status}</p>
                                 <p className="mensagem-data">{new Date(mensagem.dataEnvio).toLocaleDateString()}</p>
                             </div>
