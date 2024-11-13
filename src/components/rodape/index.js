@@ -9,15 +9,15 @@ export default function Rodape() {
                         Heather Designer
                     </h1>
                     <div className='section-img'>
-                        <a className='fb' href='../../pages/Home/index.js' role='button' tabIndex='0'>
+                        <a className='fb' href='https://www.facebook.com' target='blank' role='button' tabIndex='0'>
                             <img src='/assets/images/Rodape/fb.png' alt='Facebook' />
                         </a>
 
-                        <a className='instagram' href='../../pages/Home/index.js' role='button' tabIndex='0'>
+                        <a className='instagram' href='https://www.instagram.com'  target='blank' role='button' tabIndex='0'>
                             <img src='/assets/images/Rodape/Instagram.png' alt='Instagram' />
                         </a>
 
-                        <a className='linkedin' href='../../pages/Home/index.js' role='button' tabIndex='0'>
+                        <a className='linkedin' href='https://www.linkedin.com'  target='blank' role='button' tabIndex='0'>
                             <img src='/assets/images/Rodape/LinkedIn.png' alt='LinkedIn' />
                         </a>
                     </div>
@@ -28,14 +28,14 @@ export default function Rodape() {
                 <nav className='rodape-nav'>
                     <ul>
                         <h3>Serviços</h3>
-                        <li><a href='../../pages/Home/index.js' role='button' tabIndex='0'>Cadastrar</a></li>
+                        <li><a href='/admin' role='button' tabIndex='0'>Cadastrar</a></li>
                         <li><a href='../../pages/Home/index.js' role='button' tabIndex='0'>Logar</a></li>
                     </ul>
 
                     <ul>
                         <h3>Suporte</h3>
-                        <li><a href='../../pages/Home/index.js' role='button' tabIndex='0'>Sobre mim</a></li>
-                        <li><a href='../../pages/Home/index.js' role='button' tabIndex='0'>Ajuda</a></li>
+                        <li><a href='#primeira-secao' role='button' tabIndex='0'>Sobre mim</a></li>
+                        <li><a href='/home' role='button' tabIndex='0'>Ajuda</a></li>
                     </ul>
 
                     <ul>

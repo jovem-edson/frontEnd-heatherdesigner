@@ -46,7 +46,7 @@ export default function Cabecalho({ isAdmin }) {
                             <span>Olá Heather</span>
                         </p>
                         <span className="logoff-link">
-                            Retornar para &nbsp;
+                            Retornar para&nbsp;
                             <a href="#" onClick={logOff} className="logoff-button">
                                 visão do cliente
                             </a>

@@ -409,7 +409,7 @@ export default function Home() {
                     }}
                     >
                         <label for='nome-mensagem'>Nome*
-                            <input type="text" value={nomeMensagem} onChange={e => setNomeMensagem(e.target.value)} id="nomeMensagem" name="nome-mensagem" placeholder="Heather" />
+                            <input type="text" value={nomeMensagem} onChange={e => setNomeMensagem(e.target.value)} id="nomeMensagem" name="nome-mensagem" placeholder="Informe seu nome..." />
 
                         </label>
 
@@ -417,13 +417,14 @@ export default function Home() {
                             <input type="email" value={emailMensagem} onChange={e => setEmailMensagem(e.target.value)} id="emailMensagem" name="email-mensagem" placeholder="email@email.com" />
 
                         </label>
-                        <label for="assunto-mensagem">Assunto:
+                        <label for="assunto-mensagem">Assunto*
                             <select id="assuntoMensagem" value={assuntoMensagem} onChange={e => setAssuntoMensagem(e.target.value)} name="assunto-mensagem">
                                 <option>Photoshop</option>
                                 <option>Design Gráfico</option>
                                 <option>UX/UI Design</option>
                                 <option>Design de Aplicativos</option>
                                 <option>Design de Produto</option>
+                                <option> Outros </option>
                             </select>
                         </label>
                         <label for='corpo-mensagem'>Mensagem*

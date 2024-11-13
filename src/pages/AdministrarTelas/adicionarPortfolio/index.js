@@ -215,7 +215,7 @@ export default function AdicionarPortfolio() {
                     </div>
                 </form>
             </div>
-            <Toaster position="top-center" reverseOrder={false} />
+            <Toaster position="top-right" reverseOrder={false} />
         </div>
     );
 }

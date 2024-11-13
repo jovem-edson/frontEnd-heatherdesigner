@@ -1,10 +1,10 @@
 .pagina-faturamento-mensal {
-    padding-top: 100px;
+    padding-top: 200px;
     background-color: #CFC5B8;
     font-family: 'Inter', sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     height: 100vh;
 
@@ -15,5 +15,11 @@
         margin-bottom: 50px;
     }
     
+    .grafico {
+        width: 80%;  
+        height: 50vh; 
+        display: flex;
+        justify-content: center;      
+    }
 
 }

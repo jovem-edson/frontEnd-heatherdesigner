@@ -31,9 +31,9 @@ export default function HomeAdmin() {
     const token = localStorage.getItem('TOKEN');
 
     useEffect(() => {
-        // if (!localStorage.getItem('TOKEN')) {
-        //     navigate('/login');
-        // }
+        if (!localStorage.getItem('TOKEN')) {
+            navigate('/login');
+        }
         buscarServicos();
         buscarPortfolio();
         buscarMensagens();
@@ -197,7 +197,7 @@ export default function HomeAdmin() {
                                 <h2 className="titulo-servico">{item.titulo}</h2>
                                 <p className="status-servico">{item.status}</p>
                             </span>
-                            <p className="cliente">Preço: {item.preco}</p>
+                            <p className="cliente">Preço: R${item.preco}</p>
                             <p className="cliente">Cliente: {item.nomeCliente}</p>
                             <p className="tag-tarefa">Tag: {item.tag}</p>
 
@@ -275,13 +275,7 @@ export default function HomeAdmin() {
                 )}
             </section>
 
-            {/* Seção de Faturamento */}
-            <section id="faturamento" className="faturamento-container">
-                <span className="titulo">
-                    <h1>Faturamento</h1>
-                </span>
 
-            </section>
             <Toaster
                 position="top-center"
                 reverseOrder={false}

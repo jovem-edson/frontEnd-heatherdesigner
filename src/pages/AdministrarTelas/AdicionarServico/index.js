@@ -87,7 +87,6 @@ export default function AdicionarServico() {
 
 
         let token = localStorage.getItem('TOKEN');
-        alert(preco)
 
         if (id == undefined) {
             let resp = await axios.post(`${API_URL}/servico`, body, { headers: { 'x-access-token': token } });
@@ -158,21 +157,21 @@ export default function AdicionarServico() {
                             <label className='legenda-input' for='titulo-servico'>
                                 Título do Serviço*
                             </label>
-                            <input type="text" value={titulo} onChange={e => setTitulo(e.target.value)} id="servico" name="titulo-servico" placeholder="Insira o título do projeto..." />
+                            <input type="text" value={titulo} onChange={e => setTitulo(e.target.value)} id="servico" name="titulo-servico" placeholder="Insira o título do serviço..." />
                         </div>
 
                         <div className='campo-input'>
                             <label className='legenda-input' for='data-entrega'>
                                 Data de Entrega*
                             </label>
-                            <input type="date" value={dataEntrega} onChange={e => setDataEntrega(e.target.value)} id="data-entrega" name="data-entrega" placeholder="Insira a Data de Entrega" />
+                            <input type="date" value={dataEntrega} onChange={e => setDataEntrega(e.target.value)} id="data-entrega" name="data-entrega" />
                         </div>
 
                         <div className='campo-input'>
                             <label className='legenda-input' for='nome-cliente'>
                                 Nome do Cliente*
                             </label>
-                            <input type="text" value={nomeCliente} onChange={e => setNomeCliente(e.target.value)} id="nome" name="nome-cliente" placeholder="Insira o título do projeto..." />
+                            <input type="text" value={nomeCliente} onChange={e => setNomeCliente(e.target.value)} id="nome" name="nome-cliente" placeholder="Insira o nome do cliente..." />
                         </div>
                     </span>
 
@@ -208,7 +207,7 @@ export default function AdicionarServico() {
                 </form>
             </div>
             <Toaster
-                position="top-center"
+                position="top-right"
                 reverseOrder={false}
             />
         </div>
