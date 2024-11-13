@@ -4,7 +4,6 @@ import Card from '../../../components/cardPortfolio';
 import { API_URL } from '../../../api/constantes';
 import { Toaster, toast } from 'react-hot-toast';
 
-
 import axios from 'axios';
 
 import { useEffect, useState } from 'react';
@@ -32,9 +31,9 @@ export default function HomeAdmin() {
     const token = localStorage.getItem('TOKEN');
 
     useEffect(() => {
-        if (!localStorage.getItem('TOKEN')) {
-            navigate('/login');
-        }
+        // if (!localStorage.getItem('TOKEN')) {
+        //     navigate('/login');
+        // }
         buscarServicos();
         buscarPortfolio();
         buscarMensagens();
@@ -184,12 +183,12 @@ export default function HomeAdmin() {
                     </button>
                 </span>
 
-                <div className="linha-barra-pesquisa">
+                {/* <div className="linha-barra-pesquisa">
                     <div className="barra-pesquisa">
                         <p>Insira um nome...</p>
                         <img src="/assets/images/lupa.png" alt="lupa" />
                     </div>
-                </div>
+                </div> */}
 
                 <div className="lista-servicos">
                     {lista.slice(0, visibleCountServico).map((item) => (
@@ -240,12 +239,12 @@ export default function HomeAdmin() {
                 <span className="titulo">
                     <h1>Mensagens</h1>
                 </span>
-                <div className="linha-barra-pesquisa">
+                {/* <div className="linha-barra-pesquisa">
                     <div className="barra-pesquisa">
                         <p>Insira um nome...</p>
                         <img src="/assets/images/lupa.png" alt="lupa" />
                     </div>
-                </div>
+                </div> */}
 
                 <div className="lista-mensagens">
                     {listaMensagem.slice(0, visibleCountMensagem).map((mensagem) => (
@@ -261,7 +260,7 @@ export default function HomeAdmin() {
 
                             <div className="mensagem-info">
                                 <p className="status-servico">{mensagem.status}</p>
-                                <p className="mensagem-data">{new Date(mensagem.data_mensagem).toLocaleString()}</p>
+                                <p className="mensagem-data">{new Date(mensagem.dataEnvio).toLocaleDateString()}</p>
                             </div>
                         </div>
                     ))}

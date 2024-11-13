@@ -467,6 +467,7 @@
 
                     input,
                     textarea {
+                        font-family: 'Inter', sans-serif;
                         margin-top: 5px;
                         padding: 10px;
                         font-size: 1rem;
@@ -492,7 +493,7 @@
                     }
                 }
 
-                button {
+                .botao-enviar-mensagem {
                     width: 120px;
                     margin-top: 20px;
                     background-color: #DEB35C;

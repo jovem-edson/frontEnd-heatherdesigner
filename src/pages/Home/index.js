@@ -9,10 +9,18 @@ import Cabecalho from '../../components/cabecalho'
 import Rodape from '../../components/rodape'
 import Carrossel from '../../components/Carrossel'
 import { API_URL } from '../../api/constantes';
+import { Toaster, toast } from 'react-hot-toast';
+
 
 
 export default function Home() {
     const location = useLocation();
+
+    const [nomeMensagem, setNomeMensagem] = useState('');
+    const [emailMensagem, setEmailMensagem] = useState('');
+    const [assuntoMensagem, setAssuntoMensagem] = useState('');
+    const [corpoMensagem, setCorpoMensagem] = useState('');
+
 
      //LÓGICA PARA O PORTFÓLIO
      const [listaPortfolio, setListaPortfolio] = useState([{
@@ -75,6 +83,60 @@ export default function Home() {
         setAtualizarListaPortfolio(false); // Reseta a flag de atualização
     }
  
+    async function enviarMensagem() {
+        try {
+
+            
+
+            if (nomeMensagem == "" || emailMensagem == "" || corpoMensagem == "") {
+                if (nomeMensagem == "") {
+                    toast.error('O campo de nome deve ser preenchido na mensagem.');
+                }
+
+                if (emailMensagem == "") {
+                    toast.error('O campo de e-mail deve ser preenchido na mensagem.')
+                }
+
+              
+
+                if (corpoMensagem == "") {
+                  toast.error('Sua mensagem está vazia.')
+                }
+
+                return
+            }
+
+            let token = localStorage.getItem('TOKEN');
+            let body = {
+                'nome': nomeMensagem,
+                'email': emailMensagem,
+                'assunto': assuntoMensagem,
+                'corpoMensagem': corpoMensagem
+            };
+
+                let resp = await axios.post(`${API_URL}/mensagem`, body, {
+                    headers: { 'x-access-token': token }
+                });
+
+            
+
+                toast.success(`Mensagem Enviada! Entraremos em contato via e-mail.`, {
+                    style: {
+                        border: '1px solid #28a745', // Cor verde para borda
+                        padding: '16px',
+                        color: 'black', // Cor verde para o texto
+                    },
+                    iconTheme: {
+                        primary: '#28a745', // Cor verde para o ícone
+                        secondary: '#D4EDDA', // Cor de fundo suave em verde claro
+                    },
+                });
+
+        } catch (error) {
+            toast.error('Erro ao salvar projeto: ' + error.message);
+        }
+    }
+
 
 
 
@@ -339,16 +401,24 @@ export default function Home() {
                 </div>
                 <div className='secao-contato-2'>
                     <h1>Contato</h1>
-                    <form className='formulario'>
-                        <label>Nome:
-                            <input></input>
+                    <form 
+                    className='formulario'
+                    onSubmit={e => {
+                        e.preventDefault(); // Impede o envio padrão para que você possa controlar a lógica de salvar
+                        enviarMensagem(); // Chama a função de salvar
+                    }}
+                    >
+                        <label for='nome-mensagem'>Nome*
+                            <input type="text" value={nomeMensagem} onChange={e => setNomeMensagem(e.target.value)} id="nomeMensagem" name="nome-mensagem" placeholder="Heather" />
+
                         </label>
 
-                        <label>Endereço de email:
-                            <input></input>
+                        <label for='email-mensagem'>E-mail*
+                            <input type="email" value={emailMensagem} onChange={e => setEmailMensagem(e.target.value)} id="emailMensagem" name="email-mensagem" placeholder="email@email.com" />
+
                         </label>
-                        <label>Assunto:
-                            <select>
+                        <label for="assunto-mensagem">Assunto:
+                            <select id="assuntoMensagem" value={assuntoMensagem} onChange={e => setAssuntoMensagem(e.target.value)} name="assunto-mensagem">
                                 <option>Photoshop</option>
                                 <option>Design Gráfico</option>
                                 <option>UX/UI Design</option>
@@ -356,11 +426,14 @@ export default function Home() {
                                 <option>Design de Produto</option>
                             </select>
                         </label>
-                        <label>Mensagem:
-                            <textarea></textarea>
+                        <label for='corpo-mensagem'>Mensagem*
+                            <textarea value={corpoMensagem} onChange={e => setCorpoMensagem(e.target.value)} id="corpoMensagem" name="corpo-mensagem" placeholder="Explique-em mais detalhes o que deseja">
+                                </textarea>
+
                         </label>
-                        <button type="submit">Enviar</button>
-                    </form>
+
+                        <input type='submit' className='botao-enviar-mensagem'/> 
+                  </form>
                 </div>
 
 
@@ -369,6 +442,10 @@ export default function Home() {
             <footer className='rodape'>
                 <Rodape />
             </footer>
+            <Toaster
+                position="top-right"
+                reverseOrder={true}
+            />
         </div>
     )
 }
