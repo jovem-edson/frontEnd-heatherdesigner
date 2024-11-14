@@ -6,8 +6,9 @@ import axios from 'axios';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { API_URL } from '../../../api/constantes';
 
-import { Toaster, toast } from 'react-hot-toast';
-
+import { Toaster } from 'react-hot-toast';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function AdicionarServico() {
     const [titulo, setTitulo] = useState('');
@@ -48,27 +49,27 @@ export default function AdicionarServico() {
 
         if(titulo == "" || nomeCliente == "" || preco < 10 || tag == "" || status == "" || dataEntrega == "") {
             if(dataEntrega == "") {
-                toast.error('O campo de data de entrega deve ser preenchido.');
+                toast.warn('O campo de data de entrega deve ser preenchido.');
             }
             
             if(status == "") {
-                toast.error('O campo de status deve ser preenchido.');
+                toast.warn('O campo de status deve ser preenchido.');
             }
             
             if(tag == "") {
-                toast.error('O campo de tag deve ser preenchido.');
+                toast.warn('O campo de tag deve ser preenchido.');
             }
             
             if(preco < 10) {
-                toast.error('O campo de preço deve ser preenchido com um valor maior que 10.');
+                toast.warn('O campo de preço deve ser preenchido com um valor maior que 10.');
             }
 
             if(nomeCliente == "") {
-                toast.error('O campo de nome do cliente deve ser preenchido.');
+                toast.warn('O campo de nome do cliente deve ser preenchido.');
             }
             
             if(titulo == "") {
-                toast.error('O campo de título deve ser preenchido.');
+                toast.warn('O campo de título deve ser preenchido.');
             }
 
             return
@@ -92,16 +93,13 @@ export default function AdicionarServico() {
             let resp = await axios.post(`${API_URL}/servico`, body, { headers: { 'x-access-token': token } });
             // alert(`Registro de ID ${resp.data.novoId} adicionado`);
             toast.success(`Serviço N° ${resp.data.novoId} Adicionado com sucesso!`, {
-                style: {
-                    border: '1px solid #28a745', // Cor verde para borda
-                    padding: '16px',
-                    color: 'black', // Cor verde para o texto
-                },
-                iconTheme: {
-                    primary: '#28a745', // Cor verde para o ícone
-                    secondary: '#D4EDDA', // Cor de fundo suave em verde claro
-                },
-            });
+                position: "top-center",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                });
             
             navigate('/admin', { state: { refresh: true } });
 
@@ -110,16 +108,13 @@ export default function AdicionarServico() {
             let resp = await axios.put(`${API_URL}/servico/` + id, body, { headers: { 'x-access-token': token } });
             // alert(`Registro de ID ${id} alterado`);
             toast.success(`Serviço N° ${id} Alterado com sucesso!!`, {
-                style: {
-                    border: '1px solid #28a745', // Cor verde para borda
-                    padding: '16px',
-                    color: 'black', // Cor verde para o texto
-                },
-                iconTheme: {
-                    primary: '#28a745', // Cor verde para o ícone
-                    secondary: '#D4EDDA', // Cor de fundo suave em verde claro
-                },
-            });
+                position: "top-center",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                });
             navigate('/admin', { state: { refresh: true } });
 
         }
@@ -132,7 +127,7 @@ export default function AdicionarServico() {
     return (
         <div className='pagina-adicionar-servico' isAdmin={true}>
             <Cabecalho isAdmin={true} />
-
+            <ToastContainer />
             <div className='criar-servico'>
 
                 <span className='linha-voltar'>
