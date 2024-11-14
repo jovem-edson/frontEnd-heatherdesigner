@@ -78,7 +78,7 @@ export default function Logar() {
 
                                 <div>
                                     <label>Endereço de Email
-                                        <input type="text" value={email} onChange={(e) => {
+                                        <input type="email" value={email} onChange={(e) => {
                                             setEmail(e.target.value)
                                         }} />
                                     </label>
