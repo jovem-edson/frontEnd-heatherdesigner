@@ -115,12 +115,12 @@ export default function HomeAdmin() {
         await buscarPortfolio();
     }
 
-    // // Função para excluir mensagem
-    // async function excluirMensagem(id) {
-    //     await axios.delete(`http://localhost:3010/mensagem/${id}`);
-    //     alert(`Mensagem de ${id} excluída`);
-    //     await buscarMensagens();
-    // }
+    // Função para excluir mensagem
+    async function excluirMensagem(id) {
+        await axios.delete(`http://localhost:3010/mensagem/${id}`);
+        alert(`Mensagem de ${id} excluída`);
+        await buscarMensagens();
+    }
 
     // Função de Lazy Loading para mostrar todos os serviços
     const showAllServicos = () => {
@@ -248,27 +248,47 @@ export default function HomeAdmin() {
 
                 <div className="lista-mensagens">
                     {listaMensagem.slice(0, visibleCountMensagem).map((mensagem) => (
-                        <div className="lista-mensagens-mensagem" key={mensagem.id_mensagem}>
+                        <div className="talk-bubble" key={mensagem.id_mensagem}>
+                            {/* Informações do Cliente */}
                             <div className="mensagem-info">
                                 <p className="mensagem-nome-cliente">{mensagem.nome}</p>
                                 <p className="mensagem-nome-cliente">{mensagem.email}</p>
                             </div>
 
+                            {/* Assunto da Mensagem */}
                             <div className="mensagem-info">
-                                <p className="mensagem-assunto">Assunto: {mensagem.assunto}</p>
+                                <p className="mensagem-assunto">Assunto:</p>
+                                <p > {mensagem.assunto}</p>
                             </div>
 
+                            {/* Corpo da Mensagem */}
                             <div className="mensagem-info">
-                                <p className="mensagem-corpo">Mensagem: {mensagem.corpoMensagem}</p>
+                                <p className="mensagem-assunto">Mensagem:</p>
+                                <p className="mensagem-corpo"> {mensagem.corpoMensagem}</p>
                             </div>
 
+                            {/* Status e Data da Mensagem */}
                             <div className="mensagem-info">
                                 <p className="status-servico">{mensagem.status}</p>
                                 <p className="mensagem-data">{new Date(mensagem.dataEnvio).toLocaleDateString()}</p>
                             </div>
+
+                            {/* Triângulo da bolha */}
+                            <div className="tri-right btm-left-in"></div>
+                            <div className="botoes">
+
+                                <img
+                                    onClick={() => excluirMensagem(mensagem.id)}
+                                    src="/assets/images/excluir.png"
+                                    className="botao-excluir"
+                                    alt="excluir"
+                                />
+                            </div>
                         </div>
                     ))}
                 </div>
+
+
                 {/* Lazy Loading para Mensagem */}
                 {visibleCountMensagem < listaMensagem.length && (
                     <div className="botao-container">
@@ -278,7 +298,6 @@ export default function HomeAdmin() {
                     </div>
                 )}
             </section>
-
 
             <Toaster
                 position="top-center"

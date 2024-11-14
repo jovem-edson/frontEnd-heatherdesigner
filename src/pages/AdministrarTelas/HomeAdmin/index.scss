@@ -2,7 +2,7 @@
     padding-top: 100px;
     background-color: #F4EDE4;
     font-family: 'Inter', sans-serif;
-    
+
 
     .adicionar-portfolio {
         display: flex;
@@ -32,6 +32,7 @@
                 padding: 10px;
                 cursor: pointer;
             }
+
         }
 
         .portfolio-container {
@@ -86,24 +87,24 @@
             }
         }
 
-        .linha-barra-pesquisa {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        // .linha-barra-pesquisa {
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: center;
 
-            .barra-pesquisa {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                background-color: #FFF;
-                width: 60%;
-                border-radius: 45px;
-                height: 45px;
-                padding: 20px;
-                
-            }
-           
-        }
+        //     .barra-pesquisa {
+        //         display: flex;
+        //         justify-content: space-between;
+        //         align-items: center;
+        //         background-color: #FFF;
+        //         width: 60%;
+        //         border-radius: 45px;
+        //         height: 45px;
+        //         padding: 20px;
+
+        //     }
+
+        // }
 
         .lista-servicos {
             display: flex;
@@ -140,15 +141,47 @@
                     .data-entrega {
                         font-weight: 700;
                         font-size: 25px;
+                        color: #433D4A;
                     }
 
                     .botoes {
                         display: flex;
-                        gap: 10px;
+                        gap: 15px;
+                        /* Aumenta o espaço entre os botões */
+                        justify-content: center;
+                        /* Alinha os botões no centro */
+                        padding: 10px;
+                        /* Espaçamento ao redor dos botões */
 
                         img {
-                            width: 60px;
+                            width: 40px;
+                            height: 40px;
+                            /* Garante que a imagem seja quadrada */
                             cursor: pointer;
+                            border-radius: 5px;
+                            /* Borda arredondada para uma aparência mais suave */
+                            transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+                            /* Transições suaves */
+                            padding: 8px;
+                            /* Pequeno espaçamento interno para melhorar o clique */
+                            object-fit: contain;
+                            /* Garante que a imagem se ajuste bem dentro do contêiner */
+
+                            &:hover {
+                                background-color: #f0f0f0;
+                                /* Cor de fundo suave no hover */
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                                /* Sombra suave para destacar o botão */
+                                transform: scale(1.1);
+                                /* Leve aumento de tamanho para chamar a atenção */
+                            }
+
+                            &:focus {
+                                outline: none;
+                                /* Remove a borda de foco padrão */
+                                box-shadow: 0 0 0 3px rgba(0, 112, 255, 0.5);
+                                /* Borda azul clara quando o botão é focado */
+                            }
                         }
                     }
                 }
@@ -156,10 +189,12 @@
 
             .titulo-servico {
                 font-size: 30px;
+                color: #433D4A;
             }
 
             .status-servico {
                 font-weight: 700;
+                color: #433D4A;
             }
 
             .cliente {
@@ -197,6 +232,8 @@
         }
     }
 
+
+    //----------------------------------------------------
     .mensagens-container {
         display: flex;
         flex-direction: column;
@@ -219,43 +256,191 @@
             }
         }
 
-        .linha-barra-pesquisa {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        // .linha-barra-pesquisa {
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: center;
 
-            .barra-pesquisa {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                background-color: #FFF;
-                width: 60%;
-                border-radius: 45px;
-                height: 45px;
-                padding: 20px;
-            }
-        }
+        //     .barra-pesquisa {
+        //         display: flex;
+        //         justify-content: space-between;
+        //         align-items: center;
+        //         background-color: #FFF;
+        //         width: 60%;
+        //         border-radius: 45px;
+        //         height: 45px;
+        //         padding: 20px;
+        //     }
+        // }
 
         .lista-mensagens {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            /* Cria 2 colunas, adaptáveis */
+            gap: 30px;
+            /* Espaço entre as mensagens */
+            padding: 50px 50px 50px 50px;
+            font-family: 'Inter', sans-serif;
+            color: #433D4A;
+            max-width: 1000px;
+            /* Limita a largura do contêiner */
+            margin: 0 auto;
+            /* Centraliza na tela */
+            box-sizing: border-box;
+            justify-items: center;
+            /* Centraliza as mensagens dentro de cada célula */
+        }
+
+        .mensagem-info {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 30px;
-            margin: 30px;
+            gap: 8px;
+            margin-bottom: 15px;
+            /* Espaço entre os blocos de informação */
+        }
 
-            .lista-mensagens-mensagem {
-                display: flex;
-                justify-content: space-between;
-                background-color: #CFC5B8;
-                border-radius: 20px;
-                margin-top: 24px;
-                padding: 20px;
-                box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.20);
-                flex-direction: column;
-                gap: 5px;
-                width: 800px;
+        .mensagem-nome-cliente {
+            font-weight: bold;
+            font-size: 18px;
+            color: #2C3E50;
+            /* Cor mais escura para destacar o nome */
+        }
+
+        .mensagem-assunto {
+            font-weight: 600;
+            font-size: 16px;
+            color: #34495E;
+            /* Cor para o assunto */
+        }
+
+        .mensagem-corpo {
+            font-size: 16px;
+            color: #555;
+            font-style: italic;
+            word-wrap: break-word;
+            /* Garante que o texto quebre dentro da bolha */
+            white-space: pre-line;
+            /* Mantém a formatação de quebras de linha no texto */
+            max-height: 200px;
+            /* Limita a altura do texto, caso seja muito longo */
+            overflow-y: auto;
+            /* Permite rolar o conteúdo caso ele ultrapasse o limite da altura */
+            margin-bottom: 15px;
+            /* Espaço inferior entre as informações */
+        }
+
+
+        .status-servico {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2ECC71;
+            /* Cor verde para status ativo */
+        }
+
+        .mensagem-data {
+            font-size: 14px;
+            color: #000000;
+            margin-top: 5px;
+        }
+
+        /* Estilo para a bolha de fala */
+        .talk-bubble {
+            display: inline-block;
+            position: relative;
+            background-color: #CFC5B8;
+            border-radius: 20px;
+            padding: 30px 40px;
+            width: 100%;
+            max-width: 700px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Sombra para destacar */
+        }
+
+        .talktext {
+            padding: 1em;
+            text-align: left;
+            line-height: 1.5em;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .talktext p {
+            -webkit-margin-before: 0em;
+            -webkit-margin-after: 0em;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .talktext strong {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        /* Triângulo da bolha de fala */
+        .tri-right.btm-left-in:after {
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: 40px;
+            bottom: -30px;
+            z-index: 1;
+            border: 25px solid;
+            border-color: #CFC5B8 transparent transparent #CFC5B8;
+        }
+
+        /* Responsividade: para telas menores (telas menores que 768px) */
+        @media (max-width: 768px) {
+            .lista-mensagens {
+                grid-template-columns: 1fr;
+                /* Uma coluna em telas menores */
+                padding: 30px 15px;
             }
         }
+
+        .botoes {
+            display: flex;
+            gap: 15px;
+            /* Aumenta o espaço entre os botões */
+            justify-content: end;
+            /* Alinha os botões no centro */
+            padding: 10px;
+            /* Espaçamento ao redor dos botões */
+
+            img {
+                width: 40px;
+                height: 40px;
+                /* Garante que a imagem seja quadrada */
+                cursor: pointer;
+                border-radius: 5px;
+                /* Borda arredondada para uma aparência mais suave */
+                transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+                /* Transições suaves */
+                padding: 8px;
+                /* Pequeno espaçamento interno para melhorar o clique */
+                object-fit: contain;
+                /* Garante que a imagem se ajuste bem dentro do contêiner */
+
+                &:hover {
+                    background-color: #f0f0f0;
+                    /* Cor de fundo suave no hover */
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    /* Sombra suave para destacar o botão */
+                    transform: scale(1.1);
+                    /* Leve aumento de tamanho para chamar a atenção */
+                }
+
+                &:focus {
+                    outline: none;
+                    /* Remove a borda de foco padrão */
+                    box-shadow: 0 0 0 3px rgba(0, 112, 255, 0.5);
+                    /* Borda azul clara quando o botão é focado */
+                }
+            }
+        }
+
 
         .botao-container {
             display: flex;

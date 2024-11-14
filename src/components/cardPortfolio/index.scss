@@ -4,12 +4,12 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     background-color: #e4dccf;
-    
+
     .card-imagem img {
-    width: 400px;
-    height: 259px;
-    border-radius: 15px 15px 0 0;
-}
+        width: 400px;
+        height: 259px;
+        border-radius: 15px 15px 0 0;
+    }
 
     span {
         display: flex;
@@ -28,9 +28,49 @@
         padding: 15px;
     }
 
-    .card-botoes img {
-        cursor: pointer;
+
+    .card-botoes {
+        display: flex;
+        gap: 15px;
+        /* Aumenta o espaço entre os botões */
+        justify-content: center;
+        /* Alinha os botões no centro */
+        padding: 10px;
+        /* Espaçamento ao redor dos botões */
+
+        img {
+            width: 40px;
+            height: 40px;
+            /* Garante que a imagem seja quadrada */
+            cursor: pointer;
+            border-radius: 5px;
+            /* Borda arredondada para uma aparência mais suave */
+            transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            /* Transições suaves */
+            padding: 8px;
+            /* Pequeno espaçamento interno para melhorar o clique */
+            object-fit: contain;
+            /* Garante que a imagem se ajuste bem dentro do contêiner */
+
+            &:hover {
+                background-color: #f0f0f0;
+                /* Cor de fundo suave no hover */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                /* Sombra suave para destacar o botão */
+                transform: scale(1.1);
+                /* Leve aumento de tamanho para chamar a atenção */
+            }
+
+            &:focus {
+                outline: none;
+                /* Remove a borda de foco padrão */
+                box-shadow: 0 0 0 3px rgba(0, 112, 255, 0.5);
+                /* Borda azul clara quando o botão é focado */
+            }
+        }
     }
+
+
 
 }
 

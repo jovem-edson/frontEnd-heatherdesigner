@@ -28,7 +28,6 @@ export default function Rodape() {
                 <nav className='rodape-nav'>
                     <ul>
                         <h3>Serviços</h3>
-                        <li><a href='/admin' role='button' tabIndex='0'>Cadastrar</a></li>
                         <li><a href='../../pages/Home/index.js' role='button' tabIndex='0'>Logar</a></li>
                     </ul>
 
