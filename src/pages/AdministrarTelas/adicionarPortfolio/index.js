@@ -96,19 +96,19 @@ export default function AdicionarPortfolio() {
 
             if (titulo == "" || descricao == "" || dataRealizacao == "" || imagem == "") {
                 if (titulo == "") {
-                    toast.error('O campo de título deve ser preenchido.');
+                    toast.warn('O campo de título deve ser preenchido.');
                 }
 
                 if (dataRealizacao == "") {
-                    toast.error('O campo de data de entrega deve ser preenchido.')
+                    toast.warn('O campo de data de entrega deve ser preenchido.')
                 }
 
                 if (descricao == "") {
-                    toast.error('O campo de descrição deve ser preenchido.')
+                    toast.warn('O campo de descrição deve ser preenchido.')
                 }
 
                 if (imagem == "") {
-                  toast.error('Uma foto deve ser adicionada ao projeto.')
+                  toast.warn('Uma foto deve ser adicionada ao projeto.')
                 }
 
                 return

@@ -9,7 +9,9 @@ import Cabecalho from '../../components/cabecalho'
 import Rodape from '../../components/rodape'
 import Carrossel from '../../components/Carrossel'
 import { API_URL } from '../../api/constantes';
-import { Toaster, toast } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -90,17 +92,17 @@ export default function Home() {
 
             if (nomeMensagem == "" || emailMensagem == "" || corpoMensagem == "") {
                 if (nomeMensagem == "") {
-                    toast.error('O campo de nome deve ser preenchido na mensagem.');
+                    toast.warn('O campo de nome deve ser preenchido na mensagem.');
                 }
 
                 if (emailMensagem == "") {
-                    toast.error('O campo de e-mail deve ser preenchido na mensagem.')
+                    toast.warn('O campo de e-mail deve ser preenchido na mensagem.')
                 }
 
               
 
                 if (corpoMensagem == "") {
-                  toast.error('Sua mensagem está vazia.')
+                  toast.warn('Sua mensagem está vazia.')
                 }
 
                 return
@@ -121,15 +123,12 @@ export default function Home() {
             
 
                 toast.success(`Mensagem Enviada! Entraremos em contato via e-mail.`, {
-                    style: {
-                        border: '1px solid #28a745', // Cor verde para borda
-                        padding: '16px',
-                        color: 'black', // Cor verde para o texto
-                    },
-                    iconTheme: {
-                        primary: '#28a745', // Cor verde para o ícone
-                        secondary: '#D4EDDA', // Cor de fundo suave em verde claro
-                    },
+                    position: "top-center",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
                 });
 
         } catch (error) {
@@ -144,7 +143,7 @@ export default function Home() {
     return (
         <div id='sobre' className='pagina-home'>
             <Cabecalho isAdmin={false} />
-
+            <ToastContainer />
 
             <section className='primeira-secao'>
                 <div className='primeira-secao-container'>
