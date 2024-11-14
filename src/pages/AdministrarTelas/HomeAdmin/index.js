@@ -71,7 +71,7 @@ export default function HomeAdmin() {
 
     // Buscar mensagens
     async function buscarMensagens() {
-        let resp = await axios.get('http://localhost:3010/mensagem', {
+        let resp = await axios.get(`${API_URL}/mensagem`, {
             headers: { 'x-access-token': token }
         });
         setListaMensagem(resp.data);
