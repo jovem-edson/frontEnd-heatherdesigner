@@ -117,7 +117,7 @@ export default function HomeAdmin() {
 
     // Função para excluir mensagem
     async function excluirMensagem(id) {
-        await axios.delete(`http://localhost:3010/mensagem/${id}`);
+        await axios.delete(`${API_URL}/mensagem/${id}`);
         alert(`Mensagem de ${id} excluída`);
         await buscarMensagens();
     }
